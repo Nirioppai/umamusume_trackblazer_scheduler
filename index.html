@@ -25,12 +25,16 @@
 
       <div class="row-2" style="margin-bottom:10px;">
         <button id="rebuildBtn" class="button primary" style="margin-top:0;">Rebuild schedule</button>
-        <button id="clearLocksBtn" class="button secondary" style="margin-top:0;">Clear all locks</button>
+        <button id="clearLocksBtn" class="button secondary" style="margin-top:0;">Reset locks</button>
       </div>
 
       <div class="form-group">
-        <label class="label" for="preset">Character preset</label>
-        <select id="preset"></select>
+        <label class="label" for="presetInput">Character preset</label>
+        <div class="combo-wrap" id="presetCombo">
+          <input type="text" id="presetInput" class="combo-input" autocomplete="off" placeholder="Search character...">
+          <div class="combo-dropdown" id="presetDropdown"></div>
+        </div>
+        <input type="hidden" id="preset">
         <div class="helper" style="margin-top:4px;">Presets set default aptitudes. Override any below.</div>
       </div>
 

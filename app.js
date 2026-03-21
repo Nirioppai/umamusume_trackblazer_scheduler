@@ -19,7 +19,10 @@ let autoSolveTimer = null;
 let solveSequence = 0;
 
 const ids = {
-  preset: document.getElementById('preset'),
+  preset: document.getElementById('preset'),  // hidden input for value
+  presetInput: document.getElementById('presetInput'),
+  presetDropdown: document.getElementById('presetDropdown'),
+  presetCombo: document.getElementById('presetCombo'),
   sprint: document.getElementById('sprint'),
   mile: document.getElementById('mile'),
   medium: document.getElementById('medium'),
@@ -59,6 +62,7 @@ const settingsToggle = document.getElementById('settingsToggle');
 const drawerClose = document.getElementById('drawerClose');
 const solverToggle = document.getElementById('solverToggle');
 let activeTooltipCard = null;
+let tooltipPinned = false;
 let solverEnabled = true;
 
 /* ───── DARK MODE ───── */
@@ -66,13 +70,16 @@ const themeToggle = document.getElementById('themeToggle');
 function setTheme(dark) {
   document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
   themeToggle.textContent = dark ? '\u2600' : '\u263E';
+  localStorage.setItem('uma-theme', dark ? 'dark' : 'light');
 }
 themeToggle.addEventListener('click', () => {
   const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
   setTheme(!isDark);
 });
-// Default to system preference
-if (window.matchMedia('(prefers-color-scheme: dark)').matches) setTheme(true);
+// Restore saved theme, fallback to system preference
+const savedTheme = localStorage.getItem('uma-theme');
+if (savedTheme) setTheme(savedTheme === 'dark');
+else if (window.matchMedia('(prefers-color-scheme: dark)').matches) setTheme(true);
 
 /* ───── SETTINGS DRAWER ───── */
 function openDrawer() {
@@ -233,7 +240,7 @@ function showTooltip(card, w) {
 
     const skipBtn = document.createElement('button');
     skipBtn.className = 'tt-btn tt-btn-skip';
-    skipBtn.textContent = 'Skip — Train';
+    skipBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg> Skip — Train`;
     skipBtn.addEventListener('click', () => {
       lockUpTo(w.index);
       state.manual_locks[String(w.index)] = '[No race]';
@@ -246,7 +253,7 @@ function showTooltip(card, w) {
     if (!isNoRace) {
       const confirmBtn = document.createElement('button');
       confirmBtn.className = 'tt-btn tt-btn-confirm';
-      confirmBtn.textContent = 'Confirm Race';
+      confirmBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Confirm Race`;
       confirmBtn.addEventListener('click', () => {
         lockUpTo(w.index);
         state.freeze_before_index = w.index;
@@ -300,6 +307,7 @@ function hideTooltip() {
   tooltip.classList.remove('visible');
   tooltip.innerHTML = '';
   activeTooltipCard = null;
+  tooltipPinned = false;
 }
 
 function pickRace(choice, w) {
@@ -325,13 +333,14 @@ function lockUpTo(index) {
 }
 
 tooltip.addEventListener('mouseleave', () => {
+  if (tooltipPinned) return;
   setTimeout(() => {
+    if (tooltipPinned) return;
     if (!tooltip.matches(':hover')) {
-      // Check if card is still in DOM before querying hover
       const cardInDom = activeTooltipCard && activeTooltipCard.isConnected;
       if (!cardInDom || !activeTooltipCard.matches(':hover')) hideTooltip();
     }
-  }, 150);
+  }, 350);
 });
 
 document.addEventListener('click', (e) => {
@@ -356,9 +365,48 @@ function populateStaticControls(payload) {
   state.months = payload.months;
   state.years = payload.years;
   state.halves = payload.halves;
-  fillSelect(ids.preset, Object.keys(payload.presets), payload.settings?.preset || 'Custom Uma');
+  state.presetNames = Object.keys(payload.presets);
+  const initial = payload.settings?.preset || 'Custom Uma';
+  ids.preset.value = initial;
+  ids.presetInput.value = initial;
+  buildPresetDropdown('');
   const displayRanks = [...payload.ranks].reverse();
   [ids.sprint, ids.mile, ids.medium, ids.long, ids.turf, ids.dirt, ids.threshold].forEach(el => fillSelect(el, displayRanks, 'A'));
+}
+
+function buildPresetDropdown(filter) {
+  const dd = ids.presetDropdown;
+  dd.innerHTML = '';
+  const lower = filter.toLowerCase();
+  const matches = state.presetNames.filter(n => n.toLowerCase().includes(lower));
+  if (!matches.length) {
+    dd.innerHTML = '<div class="combo-empty">No matches</div>';
+    return;
+  }
+  for (const name of matches) {
+    const item = document.createElement('div');
+    item.className = 'combo-item' + (name === ids.preset.value ? ' selected' : '');
+    item.textContent = name;
+    item.addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      selectPreset(name);
+    });
+    dd.appendChild(item);
+  }
+}
+
+function selectPreset(name) {
+  ids.preset.value = name;
+  ids.presetInput.value = name;
+  ids.presetCombo.classList.remove('open');
+  const apt = applyPreset(name);
+  ids.sprint.value = apt.Sprint;
+  ids.mile.value = apt.Mile;
+  ids.medium.value = apt.Medium;
+  ids.long.value = apt.Long;
+  ids.turf.value = apt.Turf;
+  ids.dirt.value = apt.Dirt;
+  queueSolve(0);
 }
 
 function settingsFromUI() {
@@ -382,6 +430,7 @@ function settingsFromUI() {
 
 function loadSettingsToUI(settings) {
   ids.preset.value = settings.preset || 'Custom Uma';
+  ids.presetInput.value = settings.preset || 'Custom Uma';
   ids.sprint.value = settings.aptitudes.Sprint;
   ids.mile.value = settings.aptitudes.Mile;
   ids.medium.value = settings.aptitudes.Medium;
@@ -574,20 +623,29 @@ function renderTurnCell(w) {
   // Interactions
   card.addEventListener('click', (e) => {
     e.stopPropagation();
-    if (activeTooltipCard === card) hideTooltip();
-    else showTooltip(card, w);
+    if (activeTooltipCard === card && tooltipPinned) {
+      hideTooltip();
+    } else if (activeTooltipCard === card) {
+      tooltipPinned = true;
+    } else {
+      showTooltip(card, w);
+      tooltipPinned = true;
+    }
   });
 
   let hoverTimer = null;
   card.addEventListener('mouseenter', () => {
+    if (tooltipPinned) return;
     clearTimeout(hoverTimer);
-    hoverTimer = setTimeout(() => showTooltip(card, w), 150);
+    hoverTimer = setTimeout(() => showTooltip(card, w), 180);
   });
   card.addEventListener('mouseleave', () => {
+    if (tooltipPinned) return;
     clearTimeout(hoverTimer);
     setTimeout(() => {
+      if (tooltipPinned) return;
       if (!tooltip.matches(':hover') && (activeTooltipCard === card || !activeTooltipCard?.isConnected)) hideTooltip();
-    }, 80);
+    }, 350);
   });
 
   return card;
@@ -760,15 +818,36 @@ async function postSolve() {
 }
 
 function bindAutoSolveListeners() {
-  ids.preset.addEventListener('change', () => {
-    const apt = applyPreset(ids.preset.value);
-    ids.sprint.value = apt.Sprint;
-    ids.mile.value = apt.Mile;
-    ids.medium.value = apt.Medium;
-    ids.long.value = apt.Long;
-    ids.turf.value = apt.Turf;
-    ids.dirt.value = apt.Dirt;
-    queueSolve(0);
+  ids.presetInput.addEventListener('input', () => {
+    buildPresetDropdown(ids.presetInput.value);
+    ids.presetCombo.classList.add('open');
+  });
+  ids.presetInput.addEventListener('focus', () => {
+    ids.presetInput.select();
+    buildPresetDropdown(ids.presetInput.value);
+    ids.presetCombo.classList.add('open');
+  });
+  ids.presetInput.addEventListener('blur', () => {
+    // Small delay so mousedown on dropdown item fires first
+    setTimeout(() => {
+      ids.presetCombo.classList.remove('open');
+      // Reset to current value if input doesn't match
+      if (!state.presetNames.includes(ids.presetInput.value)) {
+        ids.presetInput.value = ids.preset.value;
+      }
+    }, 200);
+  });
+  ids.presetInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const filter = ids.presetInput.value.toLowerCase();
+      const match = state.presetNames.find(n => n.toLowerCase().includes(filter));
+      if (match) selectPreset(match);
+      ids.presetInput.blur();
+    } else if (e.key === 'Escape') {
+      ids.presetInput.value = ids.preset.value;
+      ids.presetCombo.classList.remove('open');
+      ids.presetInput.blur();
+    }
   });
 
   [ids.sprint, ids.mile, ids.medium, ids.long, ids.turf, ids.dirt, ids.threshold].forEach(el => {
@@ -798,7 +877,12 @@ function bindAutoSolveListeners() {
     queueSolve(0);
   });
   ids.clearLocksBtn.addEventListener('click', () => {
-    state.manual_locks = {};
+    // Reset to only the default summer training blocks
+    const kept = {};
+    for (const idx of DEFAULT_SUMMER_BLOCKS) {
+      kept[String(idx)] = '[No race]';
+    }
+    state.manual_locks = kept;
     state.freeze_before_index = null;
     queueSolve(0);
   });
