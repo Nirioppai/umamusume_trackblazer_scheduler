@@ -634,9 +634,21 @@ async function optimizeSchedule(settingsInput = null, fixedChoices = {}) {
   }
 
   // Max consecutive races hard cap.
+  // Skip windows where the user has manually locked a race — forced choices override the cap.
   const maxConsec = Number(settings.max_consecutive_races || 0);
   if (maxConsec > 0) {
+    const fixedRaceIndices = new Set(
+      Object.entries(fixed)
+        .filter(([, v]) => v !== NO_RACE)
+        .map(([k]) => Number(k))
+    );
     for (let start = 0; start < actionsByWindow.length - maxConsec; start += 1) {
+      // If any window in this sliding range has a forced race, skip the constraint
+      let hasForced = false;
+      for (let i = start; i < start + maxConsec + 1; i += 1) {
+        if (fixedRaceIndices.has(i)) { hasForced = true; break; }
+      }
+      if (hasForced) continue;
       const coeffs = [];
       for (let i = start; i < start + maxConsec + 1; i += 1) {
         for (const name of raceVarsByWindow[i]) coeffs.push([name, 1]);

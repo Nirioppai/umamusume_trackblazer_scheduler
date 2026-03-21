@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
   <title>Uma Musume Trackblazer Scheduler</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -116,7 +117,10 @@
       <button id="settingsToggle" class="settings-toggle" title="Open settings">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
       </button>
-      <button id="themeToggle" class="theme-toggle" title="Toggle dark mode">&#9790;</button>
+      <button id="themeToggle" class="theme-toggle" title="Toggle dark mode"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button id="shareBtn" class="share-toggle" title="Share schedule">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      </button>
       <h1 class="top-title">Uma Musume Trackblazer</h1>
       <div class="top-metrics">
         <div class="top-metric">
@@ -167,15 +171,40 @@
       <div id="scheduleYears" class="year-sections"></div>
     </div>
 
-    <!-- Epithets collapsible -->
-    <details class="epithet-panel" open>
-      <summary class="epithet-toggle">Epithets from Current Schedule</summary>
+    <!-- Epithets -->
+    <div class="epithet-panel">
+      <div class="epithet-heading">Epithets from Current Schedule</div>
       <div id="epithetList" class="epithet-list"></div>
-    </details>
+    </div>
   </div>
 
   <!-- Tooltip container -->
   <div id="raceTooltip" class="race-tooltip"></div>
+
+  <!-- Share modal -->
+  <div id="shareBackdrop" class="share-backdrop"></div>
+  <div id="shareModal" class="share-modal">
+    <div class="share-modal-header">
+      <h3>Share Schedule</h3>
+      <button id="shareClose" class="drawer-close">&times;</button>
+    </div>
+    <div class="share-modal-body">
+      <label class="label">Share link</label>
+      <div class="share-link-row">
+        <input type="text" id="shareLink" class="share-link-input" readonly>
+        <button id="copyLinkBtn" class="button primary share-copy-btn">Copy</button>
+      </div>
+      <div class="share-divider"></div>
+      <label class="label">Or paste a share link / code to import</label>
+      <div class="share-link-row">
+        <input type="text" id="importInput" class="share-link-input" placeholder="Paste link or code here...">
+        <button id="importBtn" class="button secondary share-copy-btn">Import</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast"></div>
 
   <script type="module" src="app.js"></script>
 </body>

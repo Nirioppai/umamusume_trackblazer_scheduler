@@ -67,9 +67,11 @@ let solverEnabled = true;
 
 /* ───── DARK MODE ───── */
 const themeToggle = document.getElementById('themeToggle');
+const SUN_ICON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+const MOON_ICON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
 function setTheme(dark) {
   document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
-  themeToggle.textContent = dark ? '\u2600' : '\u263E';
+  themeToggle.innerHTML = dark ? SUN_ICON : MOON_ICON;
   localStorage.setItem('uma-theme', dark ? 'dark' : 'light');
 }
 themeToggle.addEventListener('click', () => {
@@ -95,8 +97,87 @@ drawerClose.addEventListener('click', closeDrawer);
 drawerBackdrop.addEventListener('click', closeDrawer);
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    if (settingsDrawer.classList.contains('open')) closeDrawer();
+    if (shareModal.classList.contains('open')) closeShareModal();
+    else if (settingsDrawer.classList.contains('open')) closeDrawer();
     else hideTooltip();
+  }
+});
+
+/* ───── SHARE ───── */
+const shareBtn = document.getElementById('shareBtn');
+const shareModal = document.getElementById('shareModal');
+const shareBackdrop = document.getElementById('shareBackdrop');
+const shareClose = document.getElementById('shareClose');
+const shareLink = document.getElementById('shareLink');
+const copyLinkBtn = document.getElementById('copyLinkBtn');
+const importInput = document.getElementById('importInput');
+const importBtn = document.getElementById('importBtn');
+const toast = document.getElementById('toast');
+
+function showToast(msg) {
+  toast.textContent = msg;
+  toast.classList.add('visible');
+  setTimeout(() => toast.classList.remove('visible'), 2500);
+}
+
+function encodeShareState() {
+  const data = {
+    s: settingsFromUI(),
+    l: state.manual_locks,
+    f: state.freeze_before_index
+  };
+  return btoa(JSON.stringify(data));
+}
+
+function decodeShareState(code) {
+  // Strip URL parts if a full link was pasted
+  const hashIdx = code.indexOf('#');
+  if (hashIdx !== -1) code = code.substring(hashIdx + 1);
+  code = code.trim();
+  return JSON.parse(atob(code));
+}
+
+function openShareModal() {
+  const code = encodeShareState();
+  const url = window.location.origin + window.location.pathname + '#' + code;
+  shareLink.value = url;
+  importInput.value = '';
+  shareModal.classList.add('open');
+  shareBackdrop.classList.add('open');
+}
+
+function closeShareModal() {
+  shareModal.classList.remove('open');
+  shareBackdrop.classList.remove('open');
+}
+
+shareBtn.addEventListener('click', openShareModal);
+shareClose.addEventListener('click', closeShareModal);
+shareBackdrop.addEventListener('click', closeShareModal);
+
+copyLinkBtn.addEventListener('click', () => {
+  navigator.clipboard.writeText(shareLink.value).then(() => {
+    showToast('Link copied to clipboard!');
+  }).catch(() => {
+    shareLink.select();
+    document.execCommand('copy');
+    showToast('Link copied!');
+  });
+});
+
+importBtn.addEventListener('click', () => {
+  const raw = importInput.value.trim();
+  if (!raw) return;
+  try {
+    const data = decodeShareState(raw);
+    state.manual_locks = data.l || {};
+    state.freeze_before_index = data.f ?? null;
+    if (data.s) loadSettingsToUI(data.s);
+    closeShareModal();
+    showToast('Schedule imported!');
+    queueSolve(0);
+  } catch (e) {
+    showToast('Invalid share link or code');
   }
 });
 
@@ -785,6 +866,27 @@ function applyPayload(payload) {
   renderSummary();
   renderSchedule();
   renderEpithets();
+  // Persist state so it survives refresh
+  saveStateToStorage();
+}
+
+function saveStateToStorage() {
+  try {
+    const data = {
+      s: settingsFromUI(),
+      l: state.manual_locks,
+      f: state.freeze_before_index
+    };
+    localStorage.setItem('uma-schedule', JSON.stringify(data));
+  } catch (e) { /* quota exceeded — ignore */ }
+}
+
+function loadStateFromStorage() {
+  try {
+    const raw = localStorage.getItem('uma-schedule');
+    if (!raw) return null;
+    return JSON.parse(raw);
+  } catch (e) { return null; }
 }
 
 function queueSolve(delay = 250) {
@@ -902,13 +1004,45 @@ function bindAutoSolveListeners() {
 }
 
 async function init() {
+  // Load saved state before initialPayload so applyPayload doesn't overwrite it
+  const hash = window.location.hash.slice(1);
+  const saved = !hash ? loadStateFromStorage() : null;
+
   const payload = await initialPayload();
   populateStaticControls(payload);
-  applyPayload(payload);
 
-  // Apply default summer training blocks (no-race)
-  for (const idx of DEFAULT_SUMMER_BLOCKS) {
-    state.manual_locks[String(idx)] = '[No race]';
+  // Apply initial payload without saving to storage (would overwrite saved state)
+  state.settings = payload.settings;
+  state.summary = payload.summary;
+  state.windows = payload.windows;
+  state.epithets = payload.epithets;
+  state.current_selected = payload.current_selected || [];
+  loadSettingsToUI(payload.settings);
+  renderSummary();
+  renderSchedule();
+  renderEpithets();
+
+  // Restore state: URL hash > localStorage > defaults
+  if (hash) {
+    try {
+      const data = decodeShareState(hash);
+      state.manual_locks = data.l || {};
+      state.freeze_before_index = data.f ?? null;
+      if (data.s) loadSettingsToUI(data.s);
+      showToast('Imported shared schedule!');
+    } catch (e) {
+      for (const idx of DEFAULT_SUMMER_BLOCKS) {
+        state.manual_locks[String(idx)] = '[No race]';
+      }
+    }
+  } else if (saved) {
+    state.manual_locks = saved.l || {};
+    state.freeze_before_index = saved.f ?? null;
+    if (saved.s) loadSettingsToUI(saved.s);
+  } else {
+    for (const idx of DEFAULT_SUMMER_BLOCKS) {
+      state.manual_locks[String(idx)] = '[No race]';
+    }
   }
   queueSolve(0);
 
