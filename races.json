@@ -1,12 +1,66 @@
 [
   {
+    "period": "Late Jul",
+    "year": "Junior",
+    "name": "Hakodate Junior Stakes",
+    "grade": "G3",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Hakodate"
+  },
+  {
+    "period": "Late Jul",
+    "year": "Junior",
+    "name": "Chukyo Junior Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Chukyo"
+  },
+  {
+    "period": "Early Aug",
+    "year": "Junior",
+    "name": "Cosmos Sho",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Sapporo"
+  },
+  {
+    "period": "Early Aug",
+    "year": "Junior",
+    "name": "Dahlia Sho",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Niigata"
+  },
+  {
+    "period": "Early Aug",
+    "year": "Junior",
+    "name": "Phoenix Sho",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Kokura"
+  },
+  {
     "period": "Late Aug",
     "year": "Junior",
     "name": "Niigata Junior Stakes",
     "grade": "G3",
-    "distance": "Medium",
+    "distance": "Mile",
     "surface": "Turf",
     "track": "Niigata"
+  },
+  {
+    "period": "Late Aug",
+    "year": "Junior",
+    "name": "Clover Sho",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Sapporo"
   },
   {
     "period": "Early Sep",
@@ -27,6 +81,69 @@
     "track": "Sapporo"
   },
   {
+    "period": "Early Sep",
+    "year": "Junior",
+    "name": "Nojigiku Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Early Sep",
+    "year": "Junior",
+    "name": "Suzuran Sho",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Sapporo"
+  },
+  {
+    "period": "Early Sep",
+    "year": "Junior",
+    "name": "Aster Sho",
+    "grade": "Pre-OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Late Sep",
+    "year": "Junior",
+    "name": "Canna Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Late Sep",
+    "year": "Junior",
+    "name": "Fuyo Stakes",
+    "grade": "OP",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Late Sep",
+    "year": "Junior",
+    "name": "Kikyo Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Late Sep",
+    "year": "Junior",
+    "name": "Saffron Sho",
+    "grade": "Pre-OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Nakayama"
+  },
+  {
     "period": "Early Oct",
     "year": "Junior",
     "name": "Saudi Arabia Royal Cup",
@@ -36,6 +153,42 @@
     "track": "Tokyo"
   },
   {
+    "period": "Early Oct",
+    "year": "Junior",
+    "name": "Momiji Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Early Oct",
+    "year": "Junior",
+    "name": "Platanus Sho",
+    "grade": "Pre-OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Early Oct",
+    "year": "Junior",
+    "name": "Rindo Sho",
+    "grade": "Pre-OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Early Oct",
+    "year": "Junior",
+    "name": "Shigiku Sho",
+    "grade": "Pre-OP",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
     "period": "Late Oct",
     "year": "Junior",
     "name": "Artemis Stakes",
@@ -43,6 +196,33 @@
     "distance": "Mile",
     "surface": "Turf",
     "track": "Tokyo"
+  },
+  {
+    "period": "Late Oct",
+    "year": "Junior",
+    "name": "Hagi Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Late Oct",
+    "year": "Junior",
+    "name": "Ivy Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Oct",
+    "year": "Junior",
+    "name": "Nadeshiko Sho",
+    "grade": "Pre-OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Kyoto"
   },
   {
     "period": "Early Nov",
@@ -56,6 +236,15 @@
   {
     "period": "Early Nov",
     "year": "Junior",
+    "name": "Keio Hai Junior Stakes",
+    "grade": "G2",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Early Nov",
+    "year": "Junior",
     "name": "Fantasy Stakes",
     "grade": "G3",
     "distance": "Sprint",
@@ -65,10 +254,46 @@
   {
     "period": "Early Nov",
     "year": "Junior",
-    "name": "Keio Hai Junior Stakes",
-    "grade": "G2",
+    "name": "Fukushima Junior Stakes",
+    "grade": "OP",
     "distance": "Sprint",
     "surface": "Turf",
+    "track": "Fukushima"
+  },
+  {
+    "period": "Early Nov",
+    "year": "Junior",
+    "name": "Hyakunichiso Tokubetsu",
+    "grade": "Pre-OP",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Early Nov",
+    "year": "Junior",
+    "name": "Kigiku Sho",
+    "grade": "Pre-OP",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Early Nov",
+    "year": "Junior",
+    "name": "Kimmokusei Tokubetsu",
+    "grade": "Pre-OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Fukushima"
+  },
+  {
+    "period": "Early Nov",
+    "year": "Junior",
+    "name": "Oxalis Sho",
+    "grade": "Pre-OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
     "track": "Tokyo"
   },
   {
@@ -88,6 +313,141 @@
     "distance": "Mile",
     "surface": "Turf",
     "track": "Tokyo"
+  },
+  {
+    "period": "Late Nov",
+    "year": "Junior",
+    "name": "Akamatsu Sho",
+    "grade": "Pre-OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Nov",
+    "year": "Junior",
+    "name": "Begonia Sho",
+    "grade": "Pre-OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Nov",
+    "year": "Junior",
+    "name": "Cattleya Sho",
+    "grade": "Pre-OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Nov",
+    "year": "Junior",
+    "name": "Habotan Sho",
+    "grade": "Pre-OP",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Late Nov",
+    "year": "Junior",
+    "name": "Koyamaki Sho",
+    "grade": "Pre-OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Chukyo"
+  },
+  {
+    "period": "Late Nov",
+    "year": "Junior",
+    "name": "Mochinoki Sho",
+    "grade": "Pre-OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Late Nov",
+    "year": "Junior",
+    "name": "Shiragiku Sho",
+    "grade": "Pre-OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Late Nov",
+    "year": "Junior",
+    "name": "Shumeigiku Sho",
+    "grade": "Pre-OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Early Dec",
+    "year": "Junior",
+    "name": "Erica Sho",
+    "grade": "Pre-OP",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Early Dec",
+    "year": "Junior",
+    "name": "Hiiragi Sho",
+    "grade": "Pre-OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Early Dec",
+    "year": "Junior",
+    "name": "Kantsubaki Sho",
+    "grade": "Pre-OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Chukyo"
+  },
+  {
+    "period": "Early Dec",
+    "year": "Junior",
+    "name": "Kuromatsu Sho",
+    "grade": "Pre-OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Early Dec",
+    "year": "Junior",
+    "name": "Manryo Sho",
+    "grade": "Pre-OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Early Dec",
+    "year": "Junior",
+    "name": "Sazanka Sho",
+    "grade": "Pre-OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Early Dec",
+    "year": "Junior",
+    "name": "Tsuwabuki Sho",
+    "grade": "Pre-OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Chukyo"
   },
   {
     "period": "Early Dec",
@@ -110,6 +470,24 @@
   {
     "period": "Late Dec",
     "year": "Junior",
+    "name": "Christmas Rose Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Late Dec",
+    "year": "Junior",
+    "name": "Senryo Sho",
+    "grade": "Pre-OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Late Dec",
+    "year": "Junior",
     "name": "Hopeful Stakes",
     "grade": "G1",
     "distance": "Medium",
@@ -117,13 +495,13 @@
     "track": "Nakayama"
   },
   {
-    "period": "Late Jul",
+    "period": "Late Dec",
     "year": "Junior",
-    "name": "Hakodate Junior Stakes",
-    "grade": "G3",
-    "distance": "Sprint",
-    "surface": "Turf",
-    "track": "Hakodate"
+    "name": "Zen-Nippon Junior Yushun",
+    "grade": "G1",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Kawasaki"
   },
   {
     "period": "Early Jan",
@@ -149,6 +527,42 @@
     "name": "Shinzan Kinen",
     "grade": "G3",
     "distance": "Mile",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Early Jan",
+    "year": "Classic",
+    "name": "Junior Cup",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Early Jan",
+    "year": "Classic",
+    "name": "Kobai Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Late Jan",
+    "year": "Classic",
+    "name": "Crocus Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Jan",
+    "year": "Classic",
+    "name": "Wakagoma Stakes",
+    "grade": "OP",
+    "distance": "Medium",
     "surface": "Turf",
     "track": "Kyoto"
   },
@@ -180,6 +594,42 @@
     "track": "Tokyo"
   },
   {
+    "period": "Early Feb",
+    "year": "Classic",
+    "name": "Elfin Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Late Feb",
+    "year": "Classic",
+    "name": "Hyacinth Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Feb",
+    "year": "Classic",
+    "name": "Marguerite Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Late Feb",
+    "year": "Classic",
+    "name": "Sumire Stakes",
+    "grade": "OP",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
     "period": "Early Mar",
     "year": "Classic",
     "name": "Fillies' Revue",
@@ -203,6 +653,33 @@
     "name": "Yayoi Sho",
     "grade": "G2",
     "distance": "Medium",
+    "surface": "Turf",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Early Mar",
+    "year": "Classic",
+    "name": "Anemone Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Early Mar",
+    "year": "Classic",
+    "name": "Shoryu Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Chukyo"
+  },
+  {
+    "period": "Late Mar",
+    "year": "Classic",
+    "name": "Spring Stakes",
+    "grade": "G2",
+    "distance": "Mile",
     "surface": "Turf",
     "track": "Nakayama"
   },
@@ -236,7 +713,16 @@
   {
     "period": "Late Mar",
     "year": "Classic",
-    "name": "Spring Stakes",
+    "name": "Wakaba Stakes",
+    "grade": "OP",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Early Apr",
+    "year": "Classic",
+    "name": "New Zealand Trophy",
     "grade": "G2",
     "distance": "Mile",
     "surface": "Turf",
@@ -254,11 +740,29 @@
   {
     "period": "Early Apr",
     "year": "Classic",
-    "name": "New Zealand Trophy",
-    "grade": "G2",
+    "name": "Marine Cup",
+    "grade": "G3",
     "distance": "Mile",
-    "surface": "Turf",
+    "surface": "Dirt",
+    "track": "Funabashi"
+  },
+  {
+    "period": "Early Apr",
+    "year": "Classic",
+    "name": "Fukuryu Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
     "track": "Nakayama"
+  },
+  {
+    "period": "Early Apr",
+    "year": "Classic",
+    "name": "Wasurenagusa Sho",
+    "grade": "OP",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Hanshin"
   },
   {
     "period": "Early Apr",
@@ -297,6 +801,33 @@
     "track": "Tokyo"
   },
   {
+    "period": "Late Apr",
+    "year": "Classic",
+    "name": "Sweetpea Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Apr",
+    "year": "Classic",
+    "name": "Tachibana Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Late Apr",
+    "year": "Classic",
+    "name": "Tango Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Kyoto"
+  },
+  {
     "period": "Early May",
     "year": "Classic",
     "name": "Kyoto Shimbun Hai",
@@ -304,6 +835,24 @@
     "distance": "Medium",
     "surface": "Turf",
     "track": "Kyoto"
+  },
+  {
+    "period": "Early May",
+    "year": "Classic",
+    "name": "Principal Stakes",
+    "grade": "OP",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Early May",
+    "year": "Classic",
+    "name": "Seiryu Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Tokyo"
   },
   {
     "period": "Early May",
@@ -326,6 +875,24 @@
   {
     "period": "Late May",
     "year": "Classic",
+    "name": "Hosu Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Late May",
+    "year": "Classic",
+    "name": "Shirayuri Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Late May",
+    "year": "Classic",
     "name": "Japanese Derby (Tokyo Yushun)",
     "grade": "G1",
     "distance": "Medium",
@@ -342,6 +909,276 @@
     "track": "Tokyo"
   },
   {
+    "period": "Early Jun",
+    "year": "Classic",
+    "name": "Kanto Oaks",
+    "grade": "G2",
+    "distance": "Medium",
+    "surface": "Dirt",
+    "track": "Kawasaki"
+  },
+  {
+    "period": "Early Jun",
+    "year": "Classic",
+    "name": "Epsom Cup",
+    "grade": "G3",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Early Jun",
+    "year": "Classic",
+    "name": "Mermaid Stakes",
+    "grade": "G3",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Early Jun",
+    "year": "Classic",
+    "name": "Naruo Kinen",
+    "grade": "G3",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Early Jun",
+    "year": "Classic",
+    "name": "Sleipnir Stakes",
+    "grade": "OP",
+    "distance": "Medium",
+    "surface": "Dirt",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Early Jun",
+    "year": "Classic",
+    "name": "Tempozan Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Early Jun",
+    "year": "Classic",
+    "name": "Yasuda Kinen",
+    "grade": "G1",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Jun",
+    "year": "Classic",
+    "name": "Hakodate Sprint Stakes",
+    "grade": "G3",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Hakodate"
+  },
+  {
+    "period": "Late Jun",
+    "year": "Classic",
+    "name": "Unicorn Stakes",
+    "grade": "G3",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Jun",
+    "year": "Classic",
+    "name": "Akhalteke Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Jun",
+    "year": "Classic",
+    "name": "Onuma Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Hakodate"
+  },
+  {
+    "period": "Late Jun",
+    "year": "Classic",
+    "name": "Paradise Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Jun",
+    "year": "Classic",
+    "name": "Sannomiya Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Late Jun",
+    "year": "Classic",
+    "name": "Yonago Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Late Jun",
+    "year": "Classic",
+    "name": "Takarazuka Kinen",
+    "grade": "G1",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Early Jul",
+    "year": "Classic",
+    "name": "CBC Sho",
+    "grade": "G3",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Chukyo"
+  },
+  {
+    "period": "Early Jul",
+    "year": "Classic",
+    "name": "Hakodate Kinen",
+    "grade": "G3",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Hakodate"
+  },
+  {
+    "period": "Early Jul",
+    "year": "Classic",
+    "name": "Procyon Stakes",
+    "grade": "G3",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Chukyo"
+  },
+  {
+    "period": "Early Jul",
+    "year": "Classic",
+    "name": "Radio Nikkei Sho",
+    "grade": "G3",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Fukushima"
+  },
+  {
+    "period": "Early Jul",
+    "year": "Classic",
+    "name": "Sparking Lady Cup",
+    "grade": "G3",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Kawasaki"
+  },
+  {
+    "period": "Early Jul",
+    "year": "Classic",
+    "name": "Tanabata Sho",
+    "grade": "G3",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Fukushima"
+  },
+  {
+    "period": "Early Jul",
+    "year": "Classic",
+    "name": "Marine Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Hakodate"
+  },
+  {
+    "period": "Early Jul",
+    "year": "Classic",
+    "name": "Meitetsu Hai",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Chukyo"
+  },
+  {
+    "period": "Early Jul",
+    "year": "Classic",
+    "name": "Tomoe Sho",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Hakodate"
+  },
+  {
+    "period": "Early Jul",
+    "year": "Classic",
+    "name": "Japan Dirt Derby",
+    "grade": "G1",
+    "distance": "Medium",
+    "surface": "Dirt",
+    "track": "Ooi"
+  },
+  {
+    "period": "Late Jul",
+    "year": "Classic",
+    "name": "Chukyo Kinen",
+    "grade": "G3",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Chukyo"
+  },
+  {
+    "period": "Late Jul",
+    "year": "Classic",
+    "name": "Ibis Summer Dash",
+    "grade": "G3",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Niigata"
+  },
+  {
+    "period": "Late Jul",
+    "year": "Classic",
+    "name": "Mercury Cup",
+    "grade": "G3",
+    "distance": "Medium",
+    "surface": "Dirt",
+    "track": "Morioka"
+  },
+  {
+    "period": "Late Jul",
+    "year": "Classic",
+    "name": "Queen Stakes",
+    "grade": "G3",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Sapporo"
+  },
+  {
+    "period": "Late Jul",
+    "year": "Classic",
+    "name": "Fukushima TV Open",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Fukushima"
+  },
+  {
     "period": "Early Aug",
     "year": "Classic",
     "name": "Elm Stakes",
@@ -349,15 +1186,6 @@
     "distance": "Mile",
     "surface": "Dirt",
     "track": "Sapporo"
-  },
-  {
-    "period": "Early Aug",
-    "year": "Classic",
-    "name": "Kitakyushu Kinen",
-    "grade": "G3",
-    "distance": "Sprint",
-    "surface": "Turf",
-    "track": "Kokura"
   },
   {
     "period": "Early Aug",
@@ -380,6 +1208,51 @@
   {
     "period": "Early Aug",
     "year": "Classic",
+    "name": "Sekiya Kinen",
+    "grade": "G3",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Niigata"
+  },
+  {
+    "period": "Early Aug",
+    "year": "Classic",
+    "name": "Aso Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Kokura"
+  },
+  {
+    "period": "Early Aug",
+    "year": "Classic",
+    "name": "Kanetsu Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Niigata"
+  },
+  {
+    "period": "Early Aug",
+    "year": "Classic",
+    "name": "Sapporo Nikkei Open",
+    "grade": "OP",
+    "distance": "Long",
+    "surface": "Turf",
+    "track": "Sapporo"
+  },
+  {
+    "period": "Early Aug",
+    "year": "Classic",
+    "name": "UHB Sho",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Sapporo"
+  },
+  {
+    "period": "Late Aug",
+    "year": "Classic",
     "name": "Sapporo Kinen",
     "grade": "G2",
     "distance": "Medium",
@@ -387,13 +1260,13 @@
     "track": "Sapporo"
   },
   {
-    "period": "Early Aug",
+    "period": "Late Aug",
     "year": "Classic",
-    "name": "Sekiya Kinen",
+    "name": "Cluster Cup",
     "grade": "G3",
-    "distance": "Mile",
-    "surface": "Turf",
-    "track": "Niigata"
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Morioka"
   },
   {
     "period": "Late Aug",
@@ -405,11 +1278,74 @@
     "track": "Sapporo"
   },
   {
+    "period": "Late Aug",
+    "year": "Classic",
+    "name": "Kitakyushu Kinen",
+    "grade": "G3",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Kokura"
+  },
+  {
+    "period": "Late Aug",
+    "year": "Classic",
+    "name": "BSN Sho",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Niigata"
+  },
+  {
+    "period": "Late Aug",
+    "year": "Classic",
+    "name": "Kokura Nikkei Open",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Kokura"
+  },
+  {
+    "period": "Late Aug",
+    "year": "Classic",
+    "name": "NST Sho",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Niigata"
+  },
+  {
+    "period": "Late Aug",
+    "year": "Classic",
+    "name": "Toki Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Niigata"
+  },
+  {
     "period": "Early Sep",
     "year": "Classic",
     "name": "Centaur Stakes",
     "grade": "G2",
     "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Early Sep",
+    "year": "Classic",
+    "name": "Prix Niel",
+    "grade": "G2",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Longchamp"
+  },
+  {
+    "period": "Early Sep",
+    "year": "Classic",
+    "name": "Rose Stakes",
+    "grade": "G2",
+    "distance": "Mile",
     "surface": "Turf",
     "track": "Hanshin"
   },
@@ -434,20 +1370,38 @@
   {
     "period": "Early Sep",
     "year": "Classic",
-    "name": "Rose Stakes",
-    "grade": "G2",
-    "distance": "Mile",
-    "surface": "Turf",
-    "track": "Hanshin"
-  },
-  {
-    "period": "Early Sep",
-    "year": "Classic",
     "name": "Shion Stakes",
     "grade": "G3",
     "distance": "Medium",
     "surface": "Turf",
     "track": "Nakayama"
+  },
+  {
+    "period": "Early Sep",
+    "year": "Classic",
+    "name": "Enif Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Early Sep",
+    "year": "Classic",
+    "name": "Radio Nippon Sho",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Early Sep",
+    "year": "Classic",
+    "name": "Tancho Stakes",
+    "grade": "OP",
+    "distance": "Long",
+    "surface": "Turf",
+    "track": "Sapporo"
   },
   {
     "period": "Late Sep",
@@ -470,6 +1424,24 @@
   {
     "period": "Late Sep",
     "year": "Classic",
+    "name": "Sazanka TV Hai",
+    "grade": "G2",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Funabashi"
+  },
+  {
+    "period": "Late Sep",
+    "year": "Classic",
+    "name": "St. Lite Kinen",
+    "grade": "G2",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Late Sep",
+    "year": "Classic",
     "name": "Sirius Stakes",
     "grade": "G3",
     "distance": "Medium",
@@ -479,18 +1451,27 @@
   {
     "period": "Late Sep",
     "year": "Classic",
-    "name": "Sprinters Stakes",
-    "grade": "G1",
+    "name": "Nagatsuki Stakes",
+    "grade": "OP",
     "distance": "Sprint",
-    "surface": "Turf",
+    "surface": "Dirt",
     "track": "Nakayama"
   },
   {
     "period": "Late Sep",
     "year": "Classic",
-    "name": "St. Lite Kinen",
-    "grade": "G2",
-    "distance": "Medium",
+    "name": "Port Island Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Late Sep",
+    "year": "Classic",
+    "name": "Sprinters Stakes",
+    "grade": "G1",
+    "distance": "Sprint",
     "surface": "Turf",
     "track": "Nakayama"
   },
@@ -515,11 +1496,83 @@
   {
     "period": "Early Oct",
     "year": "Classic",
+    "name": "Ladies' Prelude",
+    "grade": "G2",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Ooi"
+  },
+  {
+    "period": "Early Oct",
+    "year": "Classic",
     "name": "Mainichi Okan",
     "grade": "G2",
     "distance": "Mile",
     "surface": "Turf",
     "track": "Tokyo"
+  },
+  {
+    "period": "Early Oct",
+    "year": "Classic",
+    "name": "Tokyo Hai",
+    "grade": "G2",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Ooi"
+  },
+  {
+    "period": "Early Oct",
+    "year": "Classic",
+    "name": "Green Channel Cup",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Early Oct",
+    "year": "Classic",
+    "name": "October Stakes",
+    "grade": "OP",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Early Oct",
+    "year": "Classic",
+    "name": "Opal Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Early Oct",
+    "year": "Classic",
+    "name": "Shinetsu Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Niigata"
+  },
+  {
+    "period": "Early Oct",
+    "year": "Classic",
+    "name": "Uzumasa Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Early Oct",
+    "year": "Classic",
+    "name": "Mile Championship Nambu Hai",
+    "grade": "G1",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Morioka"
   },
   {
     "period": "Late Oct",
@@ -529,6 +1582,51 @@
     "distance": "Mile",
     "surface": "Turf",
     "track": "Tokyo"
+  },
+  {
+    "period": "Late Oct",
+    "year": "Classic",
+    "name": "Swan Stakes",
+    "grade": "G2",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Late Oct",
+    "year": "Classic",
+    "name": "Brazil Cup",
+    "grade": "OP",
+    "distance": "Medium",
+    "surface": "Dirt",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Oct",
+    "year": "Classic",
+    "name": "Cassiopeia Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Late Oct",
+    "year": "Classic",
+    "name": "Lumiere Autumn Dash",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Niigata"
+  },
+  {
+    "period": "Late Oct",
+    "year": "Classic",
+    "name": "Muromachi Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Kyoto"
   },
   {
     "period": "Late Oct",
@@ -545,15 +1643,6 @@
     "name": "Shuka Sho",
     "grade": "G1",
     "distance": "Medium",
-    "surface": "Turf",
-    "track": "Kyoto"
-  },
-  {
-    "period": "Late Oct",
-    "year": "Classic",
-    "name": "Swan Stakes",
-    "grade": "G2",
-    "distance": "Sprint",
     "surface": "Turf",
     "track": "Kyoto"
   },
@@ -587,6 +1676,33 @@
   {
     "period": "Early Nov",
     "year": "Classic",
+    "name": "Miyako Stakes",
+    "grade": "G3",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Early Nov",
+    "year": "Classic",
+    "name": "Musashino Stakes",
+    "grade": "G3",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Early Nov",
+    "year": "Classic",
+    "name": "Oro Cup",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Early Nov",
+    "year": "Classic",
     "name": "JBC Classic",
     "grade": "G1",
     "distance": "Medium",
@@ -614,38 +1730,11 @@
   {
     "period": "Early Nov",
     "year": "Classic",
-    "name": "Miyako Stakes",
-    "grade": "G3",
-    "distance": "Mile",
-    "surface": "Dirt",
-    "track": "Kyoto"
-  },
-  {
-    "period": "Early Nov",
-    "year": "Classic",
-    "name": "Musashino Stakes",
-    "grade": "G3",
-    "distance": "Mile",
-    "surface": "Dirt",
-    "track": "Tokyo"
-  },
-  {
-    "period": "Early Nov",
-    "year": "Classic",
     "name": "Queen Elizabeth II Cup",
     "grade": "G1",
     "distance": "Medium",
     "surface": "Turf",
     "track": "Kyoto"
-  },
-  {
-    "period": "Late Nov",
-    "year": "Classic",
-    "name": "Japan Cup",
-    "grade": "G1",
-    "distance": "Medium",
-    "surface": "Turf",
-    "track": "Tokyo"
   },
   {
     "period": "Late Nov",
@@ -659,11 +1748,74 @@
   {
     "period": "Late Nov",
     "year": "Classic",
+    "name": "Andromeda Stakes",
+    "grade": "OP",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Late Nov",
+    "year": "Classic",
+    "name": "Autumn Leaf Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Late Nov",
+    "year": "Classic",
+    "name": "Capital Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Nov",
+    "year": "Classic",
+    "name": "Fukushima Minyu Cup",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Fukushima"
+  },
+  {
+    "period": "Late Nov",
+    "year": "Classic",
+    "name": "Shimotsuki Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Nov",
+    "year": "Classic",
+    "name": "Japan Cup",
+    "grade": "G1",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Nov",
+    "year": "Classic",
     "name": "Mile Championship",
     "grade": "G1",
     "distance": "Mile",
     "surface": "Turf",
     "track": "Kyoto"
+  },
+  {
+    "period": "Early Dec",
+    "year": "Classic",
+    "name": "Stayers Stakes",
+    "grade": "G2",
+    "distance": "Long",
+    "surface": "Turf",
+    "track": "Nakayama"
   },
   {
     "period": "Early Dec",
@@ -686,15 +1838,6 @@
   {
     "period": "Early Dec",
     "year": "Classic",
-    "name": "Champions Cup",
-    "grade": "G1",
-    "distance": "Mile",
-    "surface": "Dirt",
-    "track": "Chukyo"
-  },
-  {
-    "period": "Early Dec",
-    "year": "Classic",
     "name": "Chunichi Shimbun Hai",
     "grade": "G3",
     "distance": "Medium",
@@ -704,11 +1847,11 @@
   {
     "period": "Early Dec",
     "year": "Classic",
-    "name": "Stayers Stakes",
-    "grade": "G2",
-    "distance": "Long",
-    "surface": "Turf",
-    "track": "Nakayama"
+    "name": "Queen Sho",
+    "grade": "G3",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Funabashi"
   },
   {
     "period": "Early Dec",
@@ -720,13 +1863,58 @@
     "track": "Nakayama"
   },
   {
-    "period": "Late Dec",
+    "period": "Early Dec",
     "year": "Classic",
-    "name": "Arima Kinen",
-    "grade": "G1",
-    "distance": "Long",
+    "name": "December Stakes",
+    "grade": "OP",
+    "distance": "Mile",
     "surface": "Turf",
     "track": "Nakayama"
+  },
+  {
+    "period": "Early Dec",
+    "year": "Classic",
+    "name": "Lapis Lazuli Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Early Dec",
+    "year": "Classic",
+    "name": "Rigel Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Early Dec",
+    "year": "Classic",
+    "name": "Shiwasu Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Early Dec",
+    "year": "Classic",
+    "name": "Tanzanite Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Early Dec",
+    "year": "Classic",
+    "name": "Champions Cup",
+    "grade": "G1",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Chukyo"
   },
   {
     "period": "Late Dec",
@@ -740,6 +1928,33 @@
   {
     "period": "Late Dec",
     "year": "Classic",
+    "name": "Betelgeuse Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Late Dec",
+    "year": "Classic",
+    "name": "Galaxy Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Late Dec",
+    "year": "Classic",
+    "name": "Arima Kinen",
+    "grade": "G1",
+    "distance": "Long",
+    "surface": "Turf",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Late Dec",
+    "year": "Classic",
     "name": "Tokyo Daishoten",
     "grade": "G1",
     "distance": "Medium",
@@ -747,148 +1962,13 @@
     "track": "Ooi"
   },
   {
-    "period": "Early Jul",
-    "year": "Classic",
-    "name": "CBC Sho",
-    "grade": "G3",
-    "distance": "Sprint",
-    "surface": "Turf",
-    "track": "Chukyo"
-  },
-  {
-    "period": "Late Jul",
-    "year": "Classic",
-    "name": "Chukyo Kinen",
-    "grade": "G3",
-    "distance": "Mile",
-    "surface": "Turf",
-    "track": "Chukyo"
-  },
-  {
-    "period": "Early Jun",
-    "year": "Classic",
-    "name": "Epsom Cup",
-    "grade": "G3",
-    "distance": "Mile",
-    "surface": "Turf",
-    "track": "Tokyo"
-  },
-  {
-    "period": "Early Jul",
-    "year": "Classic",
-    "name": "Hakodate Kinen",
-    "grade": "G3",
+    "period": "Early Jan",
+    "year": "Senior",
+    "name": "Nikkei Shinshun Hai",
+    "grade": "G2",
     "distance": "Medium",
     "surface": "Turf",
-    "track": "Hakodate"
-  },
-  {
-    "period": "Late Jun",
-    "year": "Classic",
-    "name": "Hakodate Sprint Stakes",
-    "grade": "G3",
-    "distance": "Sprint",
-    "surface": "Turf",
-    "track": "Hakodate"
-  },
-  {
-    "period": "Late Jul",
-    "year": "Classic",
-    "name": "Ibis Summer Dash",
-    "grade": "G3",
-    "distance": "Sprint",
-    "surface": "Turf",
-    "track": "Niigata"
-  },
-  {
-    "period": "Early Jul",
-    "year": "Classic",
-    "name": "Japan Dirt Derby",
-    "grade": "G1",
-    "distance": "Medium",
-    "surface": "Dirt",
-    "track": "Ooi"
-  },
-  {
-    "period": "Early Jun",
-    "year": "Classic",
-    "name": "Mermaid Stakes",
-    "grade": "G3",
-    "distance": "Medium",
-    "surface": "Turf",
-    "track": "Hanshin"
-  },
-  {
-    "period": "Early Jun",
-    "year": "Classic",
-    "name": "Naruo Kinen",
-    "grade": "G3",
-    "distance": "Medium",
-    "surface": "Turf",
-    "track": "Hanshin"
-  },
-  {
-    "period": "Early Jul",
-    "year": "Classic",
-    "name": "Procyon Stakes",
-    "grade": "G3",
-    "distance": "Sprint",
-    "surface": "Dirt",
-    "track": "Chukyo"
-  },
-  {
-    "period": "Late Jul",
-    "year": "Classic",
-    "name": "Queen Stakes",
-    "grade": "G3",
-    "distance": "Mile",
-    "surface": "Turf",
-    "track": "Sapporo"
-  },
-  {
-    "period": "Early Jul",
-    "year": "Classic",
-    "name": "Radio Nikkei Sho",
-    "grade": "G3",
-    "distance": "Mile",
-    "surface": "Turf",
-    "track": "Fukushima"
-  },
-  {
-    "period": "Late Jun",
-    "year": "Classic",
-    "name": "Takarazuka Kinen",
-    "grade": "G1",
-    "distance": "Medium",
-    "surface": "Turf",
-    "track": "Hanshin"
-  },
-  {
-    "period": "Early Jul",
-    "year": "Classic",
-    "name": "Tanabata Sho",
-    "grade": "G3",
-    "distance": "Medium",
-    "surface": "Turf",
-    "track": "Fukushima"
-  },
-  {
-    "period": "Late Jun",
-    "year": "Classic",
-    "name": "Unicorn Stakes",
-    "grade": "G3",
-    "distance": "Mile",
-    "surface": "Dirt",
-    "track": "Tokyo"
-  },
-  {
-    "period": "Early Jun",
-    "year": "Classic",
-    "name": "Yasuda Kinen",
-    "grade": "G1",
-    "distance": "Mile",
-    "surface": "Turf",
-    "track": "Tokyo"
+    "track": "Kyoto"
   },
   {
     "period": "Early Jan",
@@ -920,9 +2000,54 @@
   {
     "period": "Early Jan",
     "year": "Senior",
-    "name": "Nikkei Shinshun Hai",
-    "grade": "G2",
-    "distance": "Medium",
+    "name": "Carbuncle Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Early Jan",
+    "year": "Senior",
+    "name": "January Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Early Jan",
+    "year": "Senior",
+    "name": "Manyo Stakes",
+    "grade": "OP",
+    "distance": "Long",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Early Jan",
+    "year": "Senior",
+    "name": "New Year Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Early Jan",
+    "year": "Senior",
+    "name": "Pollux Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Early Jan",
+    "year": "Senior",
+    "name": "Yodo Tankyori Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
     "surface": "Turf",
     "track": "Kyoto"
   },
@@ -934,6 +2059,15 @@
     "distance": "Medium",
     "surface": "Turf",
     "track": "Nakayama"
+  },
+  {
+    "period": "Late Jan",
+    "year": "Senior",
+    "name": "Tokai Stakes",
+    "grade": "G2",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Chukyo"
   },
   {
     "period": "Late Jan",
@@ -956,11 +2090,29 @@
   {
     "period": "Late Jan",
     "year": "Senior",
-    "name": "Tokai Stakes",
-    "grade": "G2",
+    "name": "TCK Jo-O Hai",
+    "grade": "G3",
     "distance": "Mile",
     "surface": "Dirt",
-    "track": "Chukyo"
+    "track": "Ooi"
+  },
+  {
+    "period": "Late Jan",
+    "year": "Senior",
+    "name": "Shirafuji Stakes",
+    "grade": "OP",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Jan",
+    "year": "Senior",
+    "name": "Subaru Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Kyoto"
   },
   {
     "period": "Early Feb",
@@ -981,21 +2133,66 @@
     "track": "Tokyo"
   },
   {
+    "period": "Early Feb",
+    "year": "Senior",
+    "name": "Aldebaran Stakes",
+    "grade": "OP",
+    "distance": "Medium",
+    "surface": "Dirt",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Early Feb",
+    "year": "Senior",
+    "name": "Rakuyo Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Early Feb",
+    "year": "Senior",
+    "name": "Valentine Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Early Feb",
+    "year": "Senior",
+    "name": "Yamato Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Early Feb",
+    "year": "Senior",
+    "name": "Kawasaki Kinen",
+    "grade": "G1",
+    "distance": "Medium",
+    "surface": "Dirt",
+    "track": "Kawasaki"
+  },
+  {
+    "period": "Late Feb",
+    "year": "Senior",
+    "name": "Nakayama Kinen",
+    "grade": "G2",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Nakayama"
+  },
+  {
     "period": "Late Feb",
     "year": "Senior",
     "name": "Diamond Stakes",
     "grade": "G3",
     "distance": "Long",
     "surface": "Turf",
-    "track": "Tokyo"
-  },
-  {
-    "period": "Late Feb",
-    "year": "Senior",
-    "name": "February Stakes",
-    "grade": "G1",
-    "distance": "Mile",
-    "surface": "Dirt",
     "track": "Tokyo"
   },
   {
@@ -1028,11 +2225,38 @@
   {
     "period": "Late Feb",
     "year": "Senior",
-    "name": "Nakayama Kinen",
+    "name": "Kitakyushu Tankyori Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Kokura"
+  },
+  {
+    "period": "Late Feb",
+    "year": "Senior",
+    "name": "Sobu Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Late Feb",
+    "year": "Senior",
+    "name": "February Stakes",
+    "grade": "G1",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Early Mar",
+    "year": "Senior",
+    "name": "Empress Hai",
     "grade": "G2",
     "distance": "Medium",
-    "surface": "Turf",
-    "track": "Nakayama"
+    "surface": "Dirt",
+    "track": "Kawasaki"
   },
   {
     "period": "Early Mar",
@@ -1062,6 +2286,51 @@
     "track": "Nakayama"
   },
   {
+    "period": "Early Mar",
+    "year": "Senior",
+    "name": "Kochi Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Early Mar",
+    "year": "Senior",
+    "name": "Nigawa Stakes",
+    "grade": "OP",
+    "distance": "Medium",
+    "surface": "Dirt",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Early Mar",
+    "year": "Senior",
+    "name": "Osakajo Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Early Mar",
+    "year": "Senior",
+    "name": "Polaris Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Late Mar",
+    "year": "Senior",
+    "name": "Diolite Kinen",
+    "grade": "G2",
+    "distance": "Medium",
+    "surface": "Dirt",
+    "track": "Funabashi"
+  },
+  {
     "period": "Late Mar",
     "year": "Senior",
     "name": "Hanshin Daishoten",
@@ -1069,6 +2338,15 @@
     "distance": "Long",
     "surface": "Turf",
     "track": "Hanshin"
+  },
+  {
+    "period": "Late Mar",
+    "year": "Senior",
+    "name": "Nikkei Sho",
+    "grade": "G2",
+    "distance": "Long",
+    "surface": "Turf",
+    "track": "Nakayama"
   },
   {
     "period": "Late Mar",
@@ -1082,11 +2360,20 @@
   {
     "period": "Late Mar",
     "year": "Senior",
-    "name": "Nikkei Sho",
-    "grade": "G2",
-    "distance": "Long",
-    "surface": "Turf",
+    "name": "Chiba Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
     "track": "Nakayama"
+  },
+  {
+    "period": "Late Mar",
+    "year": "Senior",
+    "name": "Rokko Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Hanshin"
   },
   {
     "period": "Late Mar",
@@ -1109,19 +2396,19 @@
   {
     "period": "Early Apr",
     "year": "Senior",
-    "name": "Antares Stakes",
-    "grade": "G3",
+    "name": "Hanshin Umamusume Stakes",
+    "grade": "G2",
     "distance": "Mile",
-    "surface": "Dirt",
+    "surface": "Turf",
     "track": "Hanshin"
   },
   {
     "period": "Early Apr",
     "year": "Senior",
-    "name": "Hanshin Umamusume Stakes",
-    "grade": "G2",
+    "name": "Antares Stakes",
+    "grade": "G3",
     "distance": "Mile",
-    "surface": "Turf",
+    "surface": "Dirt",
     "track": "Hanshin"
   },
   {
@@ -1132,6 +2419,69 @@
     "distance": "Mile",
     "surface": "Turf",
     "track": "Nakayama"
+  },
+  {
+    "period": "Early Apr",
+    "year": "Senior",
+    "name": "Marine Cup",
+    "grade": "G3",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Funabashi"
+  },
+  {
+    "period": "Early Apr",
+    "year": "Senior",
+    "name": "Azumakofuji Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Fukushima"
+  },
+  {
+    "period": "Early Apr",
+    "year": "Senior",
+    "name": "Coral Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Early Apr",
+    "year": "Senior",
+    "name": "Fukushima Mimpo Hai",
+    "grade": "OP",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Fukushima"
+  },
+  {
+    "period": "Early Apr",
+    "year": "Senior",
+    "name": "Keiyo Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Early Apr",
+    "year": "Senior",
+    "name": "Shunrai Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Late Apr",
+    "year": "Senior",
+    "name": "Milers Cup (Yomiuri)",
+    "grade": "G2",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Kyoto"
   },
   {
     "period": "Late Apr",
@@ -1145,11 +2495,29 @@
   {
     "period": "Late Apr",
     "year": "Senior",
-    "name": "Milers Cup (Yomiuri)",
-    "grade": "G2",
+    "name": "Tokyo Sprint",
+    "grade": "G3",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Ooi"
+  },
+  {
+    "period": "Late Apr",
+    "year": "Senior",
+    "name": "Oasis Stakes",
+    "grade": "OP",
     "distance": "Mile",
-    "surface": "Turf",
-    "track": "Hanshin"
+    "surface": "Dirt",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Apr",
+    "year": "Senior",
+    "name": "Tennozan Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Kyoto"
   },
   {
     "period": "Late Apr",
@@ -1181,9 +2549,81 @@
   {
     "period": "Early May",
     "year": "Senior",
+    "name": "Brilliant Stakes",
+    "grade": "OP",
+    "distance": "Medium",
+    "surface": "Dirt",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Early May",
+    "year": "Senior",
+    "name": "Kurama Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Early May",
+    "year": "Senior",
+    "name": "Metropolitan Stakes",
+    "grade": "OP",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Early May",
+    "year": "Senior",
+    "name": "Miyakooji Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Early May",
+    "year": "Senior",
+    "name": "Ritto Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Early May",
+    "year": "Senior",
+    "name": "Tanigawadake Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Niigata"
+  },
+  {
+    "period": "Early May",
+    "year": "Senior",
+    "name": "Kashiwa Kinen",
+    "grade": "G1",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Funabashi"
+  },
+  {
+    "period": "Early May",
+    "year": "Senior",
     "name": "Victoria Mile",
     "grade": "G1",
     "distance": "Mile",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late May",
+    "year": "Senior",
+    "name": "Meguro Kinen",
+    "grade": "G2",
+    "distance": "Long",
     "surface": "Turf",
     "track": "Tokyo"
   },
@@ -1199,11 +2639,281 @@
   {
     "period": "Late May",
     "year": "Senior",
-    "name": "Meguro Kinen",
-    "grade": "G2",
-    "distance": "Long",
+    "name": "Azuchijo Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Late May",
+    "year": "Senior",
+    "name": "Idaten Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Niigata"
+  },
+  {
+    "period": "Late May",
+    "year": "Senior",
+    "name": "Keyaki Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late May",
+    "year": "Senior",
+    "name": "May Stakes",
+    "grade": "OP",
+    "distance": "Mile",
     "surface": "Turf",
     "track": "Tokyo"
+  },
+  {
+    "period": "Early Jun",
+    "year": "Senior",
+    "name": "Epsom Cup",
+    "grade": "G3",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Early Jun",
+    "year": "Senior",
+    "name": "Mermaid Stakes",
+    "grade": "G3",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Early Jun",
+    "year": "Senior",
+    "name": "Naruo Kinen",
+    "grade": "G3",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Early Jun",
+    "year": "Senior",
+    "name": "Sleipnir Stakes",
+    "grade": "OP",
+    "distance": "Medium",
+    "surface": "Dirt",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Early Jun",
+    "year": "Senior",
+    "name": "Tempozan Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Early Jun",
+    "year": "Senior",
+    "name": "Yasuda Kinen",
+    "grade": "G1",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Jun",
+    "year": "Senior",
+    "name": "Hakodate Sprint Stakes",
+    "grade": "G3",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Hakodate"
+  },
+  {
+    "period": "Late Jun",
+    "year": "Senior",
+    "name": "Akhalteke Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Jun",
+    "year": "Senior",
+    "name": "Onuma Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Hakodate"
+  },
+  {
+    "period": "Late Jun",
+    "year": "Senior",
+    "name": "Paradise Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Jun",
+    "year": "Senior",
+    "name": "Sannomiya Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Late Jun",
+    "year": "Senior",
+    "name": "Yonago Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Late Jun",
+    "year": "Senior",
+    "name": "Takarazuka Kinen",
+    "grade": "G1",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Late Jun",
+    "year": "Senior",
+    "name": "Teio Sho",
+    "grade": "G1",
+    "distance": "Medium",
+    "surface": "Dirt",
+    "track": "Ooi"
+  },
+  {
+    "period": "Early Jul",
+    "year": "Senior",
+    "name": "CBC Sho",
+    "grade": "G3",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Chukyo"
+  },
+  {
+    "period": "Early Jul",
+    "year": "Senior",
+    "name": "Hakodate Kinen",
+    "grade": "G3",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Hakodate"
+  },
+  {
+    "period": "Early Jul",
+    "year": "Senior",
+    "name": "Procyon Stakes",
+    "grade": "G3",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Chukyo"
+  },
+  {
+    "period": "Early Jul",
+    "year": "Senior",
+    "name": "Sparking Lady Cup",
+    "grade": "G3",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Kawasaki"
+  },
+  {
+    "period": "Early Jul",
+    "year": "Senior",
+    "name": "Tanabata Sho",
+    "grade": "G3",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Fukushima"
+  },
+  {
+    "period": "Early Jul",
+    "year": "Senior",
+    "name": "Marine Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Hakodate"
+  },
+  {
+    "period": "Early Jul",
+    "year": "Senior",
+    "name": "Meitetsu Hai",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Chukyo"
+  },
+  {
+    "period": "Early Jul",
+    "year": "Senior",
+    "name": "Tomoe Sho",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Hakodate"
+  },
+  {
+    "period": "Late Jul",
+    "year": "Senior",
+    "name": "Chukyo Kinen",
+    "grade": "G3",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Chukyo"
+  },
+  {
+    "period": "Late Jul",
+    "year": "Senior",
+    "name": "Ibis Summer Dash",
+    "grade": "G3",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Niigata"
+  },
+  {
+    "period": "Late Jul",
+    "year": "Senior",
+    "name": "Mercury Cup",
+    "grade": "G3",
+    "distance": "Medium",
+    "surface": "Dirt",
+    "track": "Morioka"
+  },
+  {
+    "period": "Late Jul",
+    "year": "Senior",
+    "name": "Queen Stakes",
+    "grade": "G3",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Sapporo"
+  },
+  {
+    "period": "Late Jul",
+    "year": "Senior",
+    "name": "Fukushima TV Open",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Fukushima"
   },
   {
     "period": "Early Aug",
@@ -1233,6 +2943,60 @@
     "track": "Niigata"
   },
   {
+    "period": "Early Aug",
+    "year": "Senior",
+    "name": "Aso Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Kokura"
+  },
+  {
+    "period": "Early Aug",
+    "year": "Senior",
+    "name": "Kanetsu Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Niigata"
+  },
+  {
+    "period": "Early Aug",
+    "year": "Senior",
+    "name": "Sapporo Nikkei Open",
+    "grade": "OP",
+    "distance": "Long",
+    "surface": "Turf",
+    "track": "Sapporo"
+  },
+  {
+    "period": "Early Aug",
+    "year": "Senior",
+    "name": "UHB Sho",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Sapporo"
+  },
+  {
+    "period": "Late Aug",
+    "year": "Senior",
+    "name": "Sapporo Kinen",
+    "grade": "G2",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Sapporo"
+  },
+  {
+    "period": "Late Aug",
+    "year": "Senior",
+    "name": "Cluster Cup",
+    "grade": "G3",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Morioka"
+  },
+  {
     "period": "Late Aug",
     "year": "Senior",
     "name": "Keeneland Cup",
@@ -1253,11 +3017,38 @@
   {
     "period": "Late Aug",
     "year": "Senior",
-    "name": "Sapporo Kinen",
-    "grade": "G2",
-    "distance": "Medium",
+    "name": "BSN Sho",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Niigata"
+  },
+  {
+    "period": "Late Aug",
+    "year": "Senior",
+    "name": "Kokura Nikkei Open",
+    "grade": "OP",
+    "distance": "Mile",
     "surface": "Turf",
-    "track": "Sapporo"
+    "track": "Kokura"
+  },
+  {
+    "period": "Late Aug",
+    "year": "Senior",
+    "name": "NST Sho",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Niigata"
+  },
+  {
+    "period": "Late Aug",
+    "year": "Senior",
+    "name": "Toki Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Niigata"
   },
   {
     "period": "Early Sep",
@@ -1267,6 +3058,15 @@
     "distance": "Sprint",
     "surface": "Turf",
     "track": "Hanshin"
+  },
+  {
+    "period": "Early Sep",
+    "year": "Senior",
+    "name": "Prix Foy",
+    "grade": "G2",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Longchamp"
   },
   {
     "period": "Early Sep",
@@ -1287,6 +3087,33 @@
     "track": "Niigata"
   },
   {
+    "period": "Early Sep",
+    "year": "Senior",
+    "name": "Enif Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Early Sep",
+    "year": "Senior",
+    "name": "Radio Nippon Sho",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Early Sep",
+    "year": "Senior",
+    "name": "Tancho Stakes",
+    "grade": "OP",
+    "distance": "Long",
+    "surface": "Turf",
+    "track": "Sapporo"
+  },
+  {
     "period": "Late Sep",
     "year": "Senior",
     "name": "All Comers",
@@ -1298,10 +3125,37 @@
   {
     "period": "Late Sep",
     "year": "Senior",
+    "name": "Sazanka TV Hai",
+    "grade": "G2",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Funabashi"
+  },
+  {
+    "period": "Late Sep",
+    "year": "Senior",
     "name": "Sirius Stakes",
     "grade": "G3",
     "distance": "Medium",
     "surface": "Dirt",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Late Sep",
+    "year": "Senior",
+    "name": "Nagatsuki Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Late Sep",
+    "year": "Senior",
+    "name": "Port Island Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
     "track": "Hanshin"
   },
   {
@@ -1334,11 +3188,83 @@
   {
     "period": "Early Oct",
     "year": "Senior",
+    "name": "Ladies' Prelude",
+    "grade": "G2",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Ooi"
+  },
+  {
+    "period": "Early Oct",
+    "year": "Senior",
     "name": "Mainichi Okan",
     "grade": "G2",
     "distance": "Mile",
     "surface": "Turf",
     "track": "Tokyo"
+  },
+  {
+    "period": "Early Oct",
+    "year": "Senior",
+    "name": "Tokyo Hai",
+    "grade": "G2",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Ooi"
+  },
+  {
+    "period": "Early Oct",
+    "year": "Senior",
+    "name": "Green Channel Cup",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Early Oct",
+    "year": "Senior",
+    "name": "October Stakes",
+    "grade": "OP",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Early Oct",
+    "year": "Senior",
+    "name": "Opal Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Early Oct",
+    "year": "Senior",
+    "name": "Shinetsu Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Niigata"
+  },
+  {
+    "period": "Early Oct",
+    "year": "Senior",
+    "name": "Uzumasa Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Early Oct",
+    "year": "Senior",
+    "name": "Mile Championship Nambu Hai",
+    "grade": "G1",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Morioka"
   },
   {
     "period": "Late Oct",
@@ -1356,6 +3282,42 @@
     "grade": "G2",
     "distance": "Sprint",
     "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Late Oct",
+    "year": "Senior",
+    "name": "Brazil Cup",
+    "grade": "OP",
+    "distance": "Medium",
+    "surface": "Dirt",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Oct",
+    "year": "Senior",
+    "name": "Cassiopeia Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Late Oct",
+    "year": "Senior",
+    "name": "Lumiere Autumn Dash",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Niigata"
+  },
+  {
+    "period": "Late Oct",
+    "year": "Senior",
+    "name": "Muromachi Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
     "track": "Kyoto"
   },
   {
@@ -1388,6 +3350,33 @@
   {
     "period": "Early Nov",
     "year": "Senior",
+    "name": "Miyako Stakes",
+    "grade": "G3",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Early Nov",
+    "year": "Senior",
+    "name": "Musashino Stakes",
+    "grade": "G3",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Early Nov",
+    "year": "Senior",
+    "name": "Oro Cup",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Early Nov",
+    "year": "Senior",
     "name": "JBC Classic",
     "grade": "G1",
     "distance": "Medium",
@@ -1415,38 +3404,11 @@
   {
     "period": "Early Nov",
     "year": "Senior",
-    "name": "Miyako Stakes",
-    "grade": "G3",
-    "distance": "Mile",
-    "surface": "Dirt",
-    "track": "Kyoto"
-  },
-  {
-    "period": "Early Nov",
-    "year": "Senior",
-    "name": "Musashino Stakes",
-    "grade": "G3",
-    "distance": "Mile",
-    "surface": "Dirt",
-    "track": "Tokyo"
-  },
-  {
-    "period": "Early Nov",
-    "year": "Senior",
     "name": "Queen Elizabeth II Cup",
     "grade": "G1",
     "distance": "Medium",
     "surface": "Turf",
     "track": "Kyoto"
-  },
-  {
-    "period": "Late Nov",
-    "year": "Senior",
-    "name": "Japan Cup",
-    "grade": "G1",
-    "distance": "Medium",
-    "surface": "Turf",
-    "track": "Tokyo"
   },
   {
     "period": "Late Nov",
@@ -1460,11 +3422,74 @@
   {
     "period": "Late Nov",
     "year": "Senior",
+    "name": "Andromeda Stakes",
+    "grade": "OP",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Late Nov",
+    "year": "Senior",
+    "name": "Autumn Leaf Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Kyoto"
+  },
+  {
+    "period": "Late Nov",
+    "year": "Senior",
+    "name": "Capital Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Nov",
+    "year": "Senior",
+    "name": "Fukushima Minyu Cup",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Fukushima"
+  },
+  {
+    "period": "Late Nov",
+    "year": "Senior",
+    "name": "Shimotsuki Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Nov",
+    "year": "Senior",
+    "name": "Japan Cup",
+    "grade": "G1",
+    "distance": "Medium",
+    "surface": "Turf",
+    "track": "Tokyo"
+  },
+  {
+    "period": "Late Nov",
+    "year": "Senior",
     "name": "Mile Championship",
     "grade": "G1",
     "distance": "Mile",
     "surface": "Turf",
     "track": "Kyoto"
+  },
+  {
+    "period": "Early Dec",
+    "year": "Senior",
+    "name": "Stayers Stakes",
+    "grade": "G2",
+    "distance": "Long",
+    "surface": "Turf",
+    "track": "Nakayama"
   },
   {
     "period": "Early Dec",
@@ -1487,15 +3512,6 @@
   {
     "period": "Early Dec",
     "year": "Senior",
-    "name": "Champions Cup",
-    "grade": "G1",
-    "distance": "Mile",
-    "surface": "Dirt",
-    "track": "Chukyo"
-  },
-  {
-    "period": "Early Dec",
-    "year": "Senior",
     "name": "Chunichi Shimbun Hai",
     "grade": "G3",
     "distance": "Medium",
@@ -1505,11 +3521,11 @@
   {
     "period": "Early Dec",
     "year": "Senior",
-    "name": "Stayers Stakes",
-    "grade": "G2",
-    "distance": "Long",
-    "surface": "Turf",
-    "track": "Nakayama"
+    "name": "Queen Sho",
+    "grade": "G3",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Funabashi"
   },
   {
     "period": "Early Dec",
@@ -1521,13 +3537,58 @@
     "track": "Nakayama"
   },
   {
-    "period": "Late Dec",
+    "period": "Early Dec",
     "year": "Senior",
-    "name": "Arima Kinen",
-    "grade": "G1",
-    "distance": "Long",
+    "name": "December Stakes",
+    "grade": "OP",
+    "distance": "Mile",
     "surface": "Turf",
     "track": "Nakayama"
+  },
+  {
+    "period": "Early Dec",
+    "year": "Senior",
+    "name": "Lapis Lazuli Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Early Dec",
+    "year": "Senior",
+    "name": "Rigel Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Early Dec",
+    "year": "Senior",
+    "name": "Shiwasu Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Early Dec",
+    "year": "Senior",
+    "name": "Tanzanite Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Turf",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Early Dec",
+    "year": "Senior",
+    "name": "Champions Cup",
+    "grade": "G1",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Chukyo"
   },
   {
     "period": "Late Dec",
@@ -1541,136 +3602,37 @@
   {
     "period": "Late Dec",
     "year": "Senior",
+    "name": "Betelgeuse Stakes",
+    "grade": "OP",
+    "distance": "Mile",
+    "surface": "Dirt",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Late Dec",
+    "year": "Senior",
+    "name": "Galaxy Stakes",
+    "grade": "OP",
+    "distance": "Sprint",
+    "surface": "Dirt",
+    "track": "Hanshin"
+  },
+  {
+    "period": "Late Dec",
+    "year": "Senior",
+    "name": "Arima Kinen",
+    "grade": "G1",
+    "distance": "Long",
+    "surface": "Turf",
+    "track": "Nakayama"
+  },
+  {
+    "period": "Late Dec",
+    "year": "Senior",
     "name": "Tokyo Daishoten",
     "grade": "G1",
     "distance": "Medium",
     "surface": "Dirt",
     "track": "Ooi"
-  },
-  {
-    "period": "Early Jul",
-    "year": "Senior",
-    "name": "CBC Sho",
-    "grade": "G3",
-    "distance": "Sprint",
-    "surface": "Turf",
-    "track": "Chukyo"
-  },
-  {
-    "period": "Late Jul",
-    "year": "Senior",
-    "name": "Chukyo Kinen",
-    "grade": "G3",
-    "distance": "Mile",
-    "surface": "Turf",
-    "track": "Chukyo"
-  },
-  {
-    "period": "Early Jun",
-    "year": "Senior",
-    "name": "Epsom Cup",
-    "grade": "G3",
-    "distance": "Mile",
-    "surface": "Turf",
-    "track": "Tokyo"
-  },
-  {
-    "period": "Early Jul",
-    "year": "Senior",
-    "name": "Hakodate Kinen",
-    "grade": "G3",
-    "distance": "Medium",
-    "surface": "Turf",
-    "track": "Hakodate"
-  },
-  {
-    "period": "Late Jun",
-    "year": "Senior",
-    "name": "Hakodate Sprint Stakes",
-    "grade": "G3",
-    "distance": "Sprint",
-    "surface": "Turf",
-    "track": "Hakodate"
-  },
-  {
-    "period": "Late Jul",
-    "year": "Senior",
-    "name": "Ibis Summer Dash",
-    "grade": "G3",
-    "distance": "Sprint",
-    "surface": "Turf",
-    "track": "Niigata"
-  },
-  {
-    "period": "Early Jun",
-    "year": "Senior",
-    "name": "Mermaid Stakes",
-    "grade": "G3",
-    "distance": "Medium",
-    "surface": "Turf",
-    "track": "Hanshin"
-  },
-  {
-    "period": "Early Jun",
-    "year": "Senior",
-    "name": "Naruo Kinen",
-    "grade": "G3",
-    "distance": "Medium",
-    "surface": "Turf",
-    "track": "Hanshin"
-  },
-  {
-    "period": "Early Jul",
-    "year": "Senior",
-    "name": "Procyon Stakes",
-    "grade": "G3",
-    "distance": "Sprint",
-    "surface": "Dirt",
-    "track": "Chukyo"
-  },
-  {
-    "period": "Late Jul",
-    "year": "Senior",
-    "name": "Queen Stakes",
-    "grade": "G3",
-    "distance": "Mile",
-    "surface": "Turf",
-    "track": "Sapporo"
-  },
-  {
-    "period": "Late Jun",
-    "year": "Senior",
-    "name": "Takarazuka Kinen",
-    "grade": "G1",
-    "distance": "Medium",
-    "surface": "Turf",
-    "track": "Hanshin"
-  },
-  {
-    "period": "Early Jul",
-    "year": "Senior",
-    "name": "Tanabata Sho",
-    "grade": "G3",
-    "distance": "Medium",
-    "surface": "Turf",
-    "track": "Fukushima"
-  },
-  {
-    "period": "Late Jun",
-    "year": "Senior",
-    "name": "Teio Sho",
-    "grade": "G1",
-    "distance": "Medium",
-    "surface": "Dirt",
-    "track": "Ooi"
-  },
-  {
-    "period": "Early Jun",
-    "year": "Senior",
-    "name": "Yasuda Kinen",
-    "grade": "G1",
-    "distance": "Mile",
-    "surface": "Turf",
-    "track": "Tokyo"
   }
 ]

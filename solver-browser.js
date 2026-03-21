@@ -23,11 +23,142 @@ const BASE_REWARD = {
 const NO_RACE = '[No race]';
 const AUTO = 'Auto';
 
-// Keep solver ordering from G -> S, but the UI can display these reversed.
 const PRESETS = {
   'Custom Uma': { Sprint: 'A', Mile: 'A', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
-  'Oguri Cap': { Sprint: 'B', Mile: 'A', Medium: 'A', Long: 'C', Turf: 'A', Dirt: 'A' }
+  'Special Week': { Sprint: 'F', Mile: 'C', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Silence Suzuka': { Sprint: 'D', Mile: 'A', Medium: 'A', Long: 'E', Turf: 'A', Dirt: 'G' },
+  'Tokai Teio': { Sprint: 'F', Mile: 'E', Medium: 'A', Long: 'B', Turf: 'A', Dirt: 'G' },
+  'Maruzensky': { Sprint: 'B', Mile: 'A', Medium: 'B', Long: 'C', Turf: 'A', Dirt: 'D' },
+  'Fuji Kiseki': { Sprint: 'B', Mile: 'A', Medium: 'B', Long: 'E', Turf: 'A', Dirt: 'F' },
+  'Oguri Cap': { Sprint: 'E', Mile: 'A', Medium: 'A', Long: 'B', Turf: 'A', Dirt: 'B' },
+  'Gold Ship': { Sprint: 'G', Mile: 'C', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Vodka': { Sprint: 'F', Mile: 'A', Medium: 'A', Long: 'F', Turf: 'A', Dirt: 'G' },
+  'Daiwa Scarlet': { Sprint: 'F', Mile: 'A', Medium: 'A', Long: 'B', Turf: 'A', Dirt: 'G' },
+  'Taiki Shuttle': { Sprint: 'A', Mile: 'A', Medium: 'E', Long: 'G', Turf: 'A', Dirt: 'B' },
+  'Grass Wonder': { Sprint: 'G', Mile: 'A', Medium: 'B', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Hishi Amazon': { Sprint: 'D', Mile: 'A', Medium: 'A', Long: 'B', Turf: 'A', Dirt: 'E' },
+  'Mejiro McQueen': { Sprint: 'G', Mile: 'F', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'E' },
+  'El Condor Pasa': { Sprint: 'F', Mile: 'A', Medium: 'A', Long: 'B', Turf: 'A', Dirt: 'B' },
+  'TM Opera O': { Sprint: 'G', Mile: 'E', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'E' },
+  'Narita Brian': { Sprint: 'F', Mile: 'B', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Symboli Rudolf': { Sprint: 'E', Mile: 'C', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Air Groove': { Sprint: 'C', Mile: 'B', Medium: 'A', Long: 'E', Turf: 'A', Dirt: 'G' },
+  'Agnes Digital': { Sprint: 'F', Mile: 'A', Medium: 'A', Long: 'G', Turf: 'A', Dirt: 'A' },
+  'Seiun Sky': { Sprint: 'G', Mile: 'C', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Biwa Hayahide': { Sprint: 'F', Mile: 'C', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'F' },
+  'Mayano Top Gun': { Sprint: 'D', Mile: 'D', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'E' },
+  'Mihono Bourbon': { Sprint: 'C', Mile: 'B', Medium: 'A', Long: 'B', Turf: 'A', Dirt: 'G' },
+  'Mejiro Ryan': { Sprint: 'E', Mile: 'C', Medium: 'A', Long: 'B', Turf: 'A', Dirt: 'G' },
+  'Hishi Akebono': { Sprint: 'A', Mile: 'B', Medium: 'F', Long: 'G', Turf: 'A', Dirt: 'F' },
+  'Rice Shower': { Sprint: 'E', Mile: 'C', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Agnes Tachyon': { Sprint: 'G', Mile: 'D', Medium: 'A', Long: 'B', Turf: 'A', Dirt: 'G' },
+  'Winning Ticket': { Sprint: 'G', Mile: 'F', Medium: 'A', Long: 'B', Turf: 'A', Dirt: 'G' },
+  'Eishin Flash': { Sprint: 'G', Mile: 'F', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Curren Chan': { Sprint: 'A', Mile: 'D', Medium: 'G', Long: 'G', Turf: 'A', Dirt: 'F' },
+  'Gold City': { Sprint: 'F', Mile: 'A', Medium: 'B', Long: 'B', Turf: 'A', Dirt: 'D' },
+  'Sakura Bakushin O': { Sprint: 'A', Mile: 'B', Medium: 'G', Long: 'G', Turf: 'A', Dirt: 'G' },
+  'Super Creek': { Sprint: 'G', Mile: 'G', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Smart Falcon': { Sprint: 'B', Mile: 'A', Medium: 'A', Long: 'E', Turf: 'E', Dirt: 'A' },
+  'Narita Taishin': { Sprint: 'F', Mile: 'D', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Haru Urara': { Sprint: 'A', Mile: 'B', Medium: 'G', Long: 'G', Turf: 'G', Dirt: 'A' },
+  'Matikanefukukitaru': { Sprint: 'F', Mile: 'C', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'F' },
+  'Meisho Doto': { Sprint: 'G', Mile: 'F', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'E' },
+  'Nice Nature': { Sprint: 'G', Mile: 'C', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'King Halo': { Sprint: 'A', Mile: 'B', Medium: 'B', Long: 'C', Turf: 'A', Dirt: 'G' },
+  'Kawakami Princess': { Sprint: 'D', Mile: 'B', Medium: 'A', Long: 'F', Turf: 'A', Dirt: 'G' },
+  'Manhattan Cafe': { Sprint: 'G', Mile: 'F', Medium: 'B', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Tosen Jordan': { Sprint: 'G', Mile: 'F', Medium: 'A', Long: 'B', Turf: 'A', Dirt: 'G' },
+  'Mejiro Dober': { Sprint: 'E', Mile: 'A', Medium: 'A', Long: 'F', Turf: 'A', Dirt: 'G' },
+  'Fine Motion': { Sprint: 'F', Mile: 'A', Medium: 'A', Long: 'C', Turf: 'A', Dirt: 'G' },
+  'Tamamo Cross': { Sprint: 'G', Mile: 'E', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'F' },
+  'Sakura Chiyono O': { Sprint: 'E', Mile: 'A', Medium: 'A', Long: 'E', Turf: 'A', Dirt: 'G' },
+  'Mejiro Ardan': { Sprint: 'E', Mile: 'B', Medium: 'A', Long: 'D', Turf: 'A', Dirt: 'F' },
+  'Admire Vega': { Sprint: 'F', Mile: 'C', Medium: 'A', Long: 'C', Turf: 'A', Dirt: 'G' },
+  'Matikanetannhauser': { Sprint: 'G', Mile: 'D', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Kitasan Black': { Sprint: 'E', Mile: 'C', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Satono Diamond': { Sprint: 'G', Mile: 'C', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Mejiro Bright': { Sprint: 'F', Mile: 'C', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Nishino Flower': { Sprint: 'A', Mile: 'A', Medium: 'E', Long: 'G', Turf: 'A', Dirt: 'F' },
+  'Yaeno Muteki': { Sprint: 'G', Mile: 'B', Medium: 'A', Long: 'E', Turf: 'A', Dirt: 'E' },
+  'Ines Fujin': { Sprint: 'G', Mile: 'A', Medium: 'A', Long: 'C', Turf: 'A', Dirt: 'G' },
+  'Mejiro Palmer': { Sprint: 'G', Mile: 'F', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Inari One': { Sprint: 'F', Mile: 'B', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'A' },
+  'Sweep Tosho': { Sprint: 'E', Mile: 'A', Medium: 'A', Long: 'D', Turf: 'A', Dirt: 'G' },
+  'Air Shakur': { Sprint: 'G', Mile: 'E', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Bamboo Memory': { Sprint: 'A', Mile: 'A', Medium: 'C', Long: 'G', Turf: 'A', Dirt: 'D' },
+  'Copano Rickey': { Sprint: 'C', Mile: 'A', Medium: 'A', Long: 'G', Turf: 'F', Dirt: 'A' },
+  'Yukino Bijin': { Sprint: 'D', Mile: 'A', Medium: 'A', Long: 'E', Turf: 'A', Dirt: 'B' },
+  'Seeking the Pearl': { Sprint: 'A', Mile: 'A', Medium: 'E', Long: 'G', Turf: 'A', Dirt: 'F' },
+  'Aston Machan': { Sprint: 'A', Mile: 'B', Medium: 'G', Long: 'G', Turf: 'A', Dirt: 'G' },
+  'Yamanin Zephyr': { Sprint: 'B', Mile: 'A', Medium: 'A', Long: 'G', Turf: 'A', Dirt: 'D' },
+  'Nakayama Festa': { Sprint: 'G', Mile: 'C', Medium: 'A', Long: 'B', Turf: 'A', Dirt: 'G' },
+  'Wonder Acute': { Sprint: 'D', Mile: 'A', Medium: 'A', Long: 'E', Turf: 'G', Dirt: 'A' },
+  'Zenno Rob Roy': { Sprint: 'G', Mile: 'E', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Hokko Tarumae': { Sprint: 'F', Mile: 'A', Medium: 'A', Long: 'E', Turf: 'G', Dirt: 'A' },
+  'Daitaku Helios': { Sprint: 'B', Mile: 'A', Medium: 'B', Long: 'E', Turf: 'A', Dirt: 'G' },
+  'Shinko Windy': { Sprint: 'C', Mile: 'A', Medium: 'B', Long: 'G', Turf: 'F', Dirt: 'A' },
+  'Mr. C.B.': { Sprint: 'G', Mile: 'B', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Twin Turbo': { Sprint: 'G', Mile: 'A', Medium: 'A', Long: 'E', Turf: 'A', Dirt: 'F' },
+  'Daiichi Ruby': { Sprint: 'A', Mile: 'A', Medium: 'C', Long: 'G', Turf: 'A', Dirt: 'G' },
+  'Symboli Kris S': { Sprint: 'G', Mile: 'E', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Sakura Laurel': { Sprint: 'G', Mile: 'C', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'E' },
+  'Neo Universe': { Sprint: 'F', Mile: 'B', Medium: 'A', Long: 'B', Turf: 'A', Dirt: 'G' },
+  'Hishi Miracle': { Sprint: 'G', Mile: 'G', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Tanino Gimlet': { Sprint: 'F', Mile: 'A', Medium: 'A', Long: 'F', Turf: 'A', Dirt: 'F' },
+  'Marvelous Sunday': { Sprint: 'G', Mile: 'C', Medium: 'A', Long: 'B', Turf: 'A', Dirt: 'F' },
+  'Katsuragi Ace': { Sprint: 'E', Mile: 'B', Medium: 'A', Long: 'B', Turf: 'A', Dirt: 'G' },
+  'Sirius Symboli': { Sprint: 'G', Mile: 'B', Medium: 'A', Long: 'C', Turf: 'A', Dirt: 'G' },
+  'Narita Top Road': { Sprint: 'G', Mile: 'C', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'K.S.Miracle': { Sprint: 'A', Mile: 'B', Medium: 'G', Long: 'G', Turf: 'A', Dirt: 'G' },
+  'Mejiro Ramonu': { Sprint: 'B', Mile: 'A', Medium: 'A', Long: 'E', Turf: 'A', Dirt: 'F' },
+  'Tap Dance City': { Sprint: 'G', Mile: 'E', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Satono Crown': { Sprint: 'G', Mile: 'B', Medium: 'A', Long: 'E', Turf: 'A', Dirt: 'G' },
+  'Cheval Grand': { Sprint: 'G', Mile: 'G', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Vivlos': { Sprint: 'E', Mile: 'A', Medium: 'A', Long: 'G', Turf: 'A', Dirt: 'G' },
+  'Biko Pegasus': { Sprint: 'A', Mile: 'B', Medium: 'G', Long: 'G', Turf: 'A', Dirt: 'E' },
+  'Ikuno Dictus': { Sprint: 'D', Mile: 'A', Medium: 'A', Long: 'D', Turf: 'A', Dirt: 'G' },
+  'Duramente': { Sprint: 'G', Mile: 'A', Medium: 'A', Long: 'C', Turf: 'A', Dirt: 'G' },
+  'Transcend': { Sprint: 'G', Mile: 'A', Medium: 'A', Long: 'G', Turf: 'F', Dirt: 'A' },
+  'Rhein Kraft': { Sprint: 'A', Mile: 'A', Medium: 'B', Long: 'G', Turf: 'A', Dirt: 'G' },
+  'Sounds of Earth': { Sprint: 'G', Mile: 'F', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'North Flight': { Sprint: 'C', Mile: 'A', Medium: 'B', Long: 'G', Turf: 'A', Dirt: 'G' },
+  'Jungle Pocket': { Sprint: 'G', Mile: 'C', Medium: 'A', Long: 'B', Turf: 'A', Dirt: 'G' },
+  'Dream Journey': { Sprint: 'F', Mile: 'C', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Calstone Light O': { Sprint: 'A', Mile: 'D', Medium: 'G', Long: 'G', Turf: 'A', Dirt: 'G' },
+  'Gentildonna': { Sprint: 'G', Mile: 'A', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Cesario': { Sprint: 'G', Mile: 'A', Medium: 'A', Long: 'F', Turf: 'A', Dirt: 'G' },
+  'Durandal': { Sprint: 'A', Mile: 'A', Medium: 'F', Long: 'G', Turf: 'A', Dirt: 'G' },
+  'Bubble Gum Fellow': { Sprint: 'G', Mile: 'A', Medium: 'A', Long: 'G', Turf: 'A', Dirt: 'G' },
+  'Air Messiah': { Sprint: 'C', Mile: 'B', Medium: 'A', Long: 'G', Turf: 'A', Dirt: 'G' },
+  'Win Variation': { Sprint: 'G', Mile: 'E', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Furioso': { Sprint: 'F', Mile: 'A', Medium: 'A', Long: 'F', Turf: 'G', Dirt: 'A' },
+  'Tsurumaru Tsuyoshi': { Sprint: 'F', Mile: 'D', Medium: 'A', Long: 'C', Turf: 'A', Dirt: 'F' },
+  'Orfevre': { Sprint: 'G', Mile: 'C', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'D' },
+  'Gran Alegria': { Sprint: 'A', Mile: 'A', Medium: 'C', Long: 'G', Turf: 'A', Dirt: 'G' },
+  'No Reason': { Sprint: 'G', Mile: 'B', Medium: 'A', Long: 'C', Turf: 'A', Dirt: 'G' },
+  'Fenomeno': { Sprint: 'G', Mile: 'G', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Verxina': { Sprint: 'D', Mile: 'A', Medium: 'A', Long: 'G', Turf: 'A', Dirt: 'G' },
+  'Loves Only You': { Sprint: 'G', Mile: 'C', Medium: 'A', Long: 'F', Turf: 'A', Dirt: 'G' },
+  'Chrono Genesis': { Sprint: 'G', Mile: 'B', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Fusaichi Pandora': { Sprint: 'G', Mile: 'B', Medium: 'A', Long: 'G', Turf: 'A', Dirt: 'E' },
+  'Still in Love': { Sprint: 'C', Mile: 'A', Medium: 'A', Long: 'G', Turf: 'A', Dirt: 'G' },
+  'Espoir City': { Sprint: 'A', Mile: 'A', Medium: 'B', Long: 'G', Turf: 'E', Dirt: 'A' },
+  'Believe': { Sprint: 'A', Mile: 'D', Medium: 'G', Long: 'G', Turf: 'A', Dirt: 'G' },
+  'Dantsu Flame': { Sprint: 'E', Mile: 'B', Medium: 'A', Long: 'D', Turf: 'A', Dirt: 'F' },
+  'Buena Vista': { Sprint: 'G', Mile: 'A', Medium: 'A', Long: 'C', Turf: 'A', Dirt: 'F' },
+  'Stay Gold': { Sprint: 'G', Mile: 'G', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Kiseki': { Sprint: 'G', Mile: 'C', Medium: 'A', Long: 'A', Turf: 'A', Dirt: 'G' },
+  'Royce and Royce': { Sprint: 'G', Mile: 'B', Medium: 'A', Long: 'E', Turf: 'A', Dirt: 'G' },
+  'Almond Eye': { Sprint: 'G', Mile: 'A', Medium: 'A', Long: 'F', Turf: 'A', Dirt: 'G' },
 };
+
+// Default summer training blocks (no-race turns).
+// Junior: Early Jul → Early Aug; Classic & Senior: Early Jul → Late Aug.
+const DEFAULT_SUMMER_BLOCKS = [
+  12, 13, 14,           // Junior Jul-E, Jul-L, Aug-E
+  36, 37, 38, 39,       // Classic Jul-E, Jul-L, Aug-E, Aug-L
+  60, 61, 62, 63        // Senior Jul-E, Jul-L, Aug-E, Aug-L
+];
 
 function clone(obj) {
   return JSON.parse(JSON.stringify(obj));
@@ -267,6 +398,87 @@ function completedEpithets(selectedRaces, data) {
   if (springChampion && fallChampion && (stunning || lady)) done.add('Legendary');
 
   return data.epithets.filter(e => done.has(e.name)).map(e => e.name);
+}
+
+// For each completed epithet, return the predicate that matches contributing races.
+function epithetRacePredicates(completedNames) {
+  const preds = {};
+  const has = name => completedNames.includes(name);
+
+  if (has('Stunning')) preds['Stunning'] = r => r.year === 'Classic' && ['Satsuki Sho', 'Japanese Derby (Tokyo Yushun)', 'Kikuka Sho'].includes(r.name);
+  if (has('Lady')) preds['Lady'] = r => r.year === 'Classic' && ['Oka Sho', 'Japanese Oaks', 'Shuka Sho'].includes(r.name);
+  if (has('Spring Champion')) preds['Spring Champion'] = r => r.year === 'Senior' && ['Osaka Hai', 'Tenno Sho (Spring)', 'Takarazuka Kinen'].includes(r.name);
+  if (has('Fall Champion')) preds['Fall Champion'] = r => r.year === 'Senior' && ['Tenno Sho (Autumn)', 'Japan Cup', 'Arima Kinen'].includes(r.name);
+  if (has('Shield Bearer')) preds['Shield Bearer'] = r => r.year === 'Senior' && ['Tenno Sho (Spring)', 'Tenno Sho (Autumn)'].includes(r.name);
+  if (has('Incredible')) preds['Incredible'] = r =>
+    (r.year === 'Classic' && ['Satsuki Sho', 'Japanese Derby (Tokyo Yushun)', 'Kikuka Sho', 'Japan Cup', 'Arima Kinen'].includes(r.name));
+  if (has('Phenomenal')) preds['Phenomenal'] = r =>
+    (r.year === 'Classic' && ['Satsuki Sho', 'Japanese Derby (Tokyo Yushun)', 'Kikuka Sho'].includes(r.name)) ||
+    ['Tenno Sho (Spring)', 'Takarazuka Kinen', 'Japan Cup', 'Tenno Sho (Autumn)', 'Osaka Hai', 'Arima Kinen'].includes(r.name);
+  if (has('Breakneck Miler')) preds['Breakneck Miler'] = r => ['NHK Mile Cup', 'Yasuda Kinen', 'Mile Championship'].includes(r.name);
+  if (has('Heroine')) preds['Heroine'] = r =>
+    (r.year === 'Classic' && ['Oka Sho', 'Japanese Oaks', 'Shuka Sho', 'Queen Elizabeth II Cup'].includes(r.name));
+  if (has('Goddess')) preds['Goddess'] = r =>
+    (r.year === 'Classic' && ['Oka Sho', 'Japanese Oaks', 'Shuka Sho', 'Queen Elizabeth II Cup'].includes(r.name)) ||
+    (r.year === 'Junior' && r.name === 'Hanshin Juvenile Fillies') ||
+    (r.year === 'Senior' && ['Victoria Mile', 'Queen Elizabeth II Cup'].includes(r.name));
+  if (has('Sprint Go-Getter')) preds['Sprint Go-Getter'] = r => ['Takamatsunomiya Kinen', 'Sprinters Stakes'].includes(r.name);
+  if (has('Sprint Speedster')) preds['Sprint Speedster'] = r => ['Takamatsunomiya Kinen', 'Sprinters Stakes', 'Yasuda Kinen', 'Mile Championship'].includes(r.name);
+  if (has('Mile a Minute')) preds['Mile a Minute'] = r =>
+    (r.year === 'Classic' && r.name === 'Oka Sho') ||
+    ['NHK Mile Cup', 'Yasuda Kinen', 'Mile Championship'].includes(r.name) ||
+    (r.year === 'Senior' && r.name === 'Victoria Mile') ||
+    (r.year === 'Junior' && ['Hanshin Juvenile Fillies', 'Asahi Hai Futurity Stakes'].includes(r.name));
+
+  if (has('Dirt G1 Achiever') || has('Dirt G1 Star') || has('Dirt G1 Powerhouse') || has('Dirt G1 Dominator')) {
+    const best = has('Dirt G1 Dominator') ? 'Dirt G1 Dominator' : has('Dirt G1 Powerhouse') ? 'Dirt G1 Powerhouse' : has('Dirt G1 Star') ? 'Dirt G1 Star' : 'Dirt G1 Achiever';
+    preds[best] = r => r.surface === 'Dirt' && r.grade === 'G1';
+    // Remove lesser tiers if the best is set
+    for (const n of ['Dirt G1 Achiever','Dirt G1 Star','Dirt G1 Powerhouse','Dirt G1 Dominator']) {
+      if (n !== best && has(n)) preds[n] = preds[best];
+    }
+  }
+
+  if (has('Standard Distance Leader')) preds['Standard Distance Leader'] = r => r.distance === 'Medium';
+  if (has('Non-Standard Distance Leader')) preds['Non-Standard Distance Leader'] = r => r.distance !== 'Medium';
+  if (has('Eat My Dust')) preds['Eat My Dust'] = r => r.surface === 'Dirt';
+  else if (has('Playing Dirty')) preds['Playing Dirty'] = r => r.surface === 'Dirt';
+  else if (has('Dirty Work')) preds['Dirty Work'] = r => r.surface === 'Dirt';
+  if (has('Pro Racer')) preds['Pro Racer'] = r => ['G1', 'G2', 'G3', 'OP', 'Pre-OP'].includes(r.grade);
+  if (has('Junior Jewel')) preds['Junior Jewel'] = r => String(r.name).includes('Junior Stakes');
+  if (has('Globe-Trotter')) preds['Globe-Trotter'] = r => COUNTRY_WORDS.some(w => String(r.name).includes(w));
+  if (has('Umatastic')) preds['Umatastic'] = r => String(r.name).includes('Umamusume Stakes');
+  if (has('Dirt Dancer')) preds['Dirt Dancer'] = r => r.surface === 'Dirt' && ['Sprint', 'Mile', 'Medium'].includes(r.distance);
+  if (has('Turf Tussler')) preds['Turf Tussler'] = r => r.surface === 'Turf' && ['Sprint', 'Mile', 'Medium', 'Long'].includes(r.distance);
+  if (has('Dirt Sprinter')) preds['Dirt Sprinter'] = r => r.year && r.name === 'JBC Sprint';
+  if (has('Kicking Up Dust')) preds['Kicking Up Dust'] = r => r.year === 'Classic' && ['Unicorn Stakes', 'Leopard Stakes', 'Japan Dirt Derby'].includes(r.name);
+  if (has('Kanto Conqueror')) preds['Kanto Conqueror'] = r => ['G1','G2','G3'].includes(r.grade) && KANTO_TRACKS.has(r.track);
+  if (has('West Japan Whiz')) preds['West Japan Whiz'] = r => ['G1','G2','G3'].includes(r.grade) && WEST_TRACKS.has(r.track);
+  if (has('Tohoku Top Dog')) preds['Tohoku Top Dog'] = r => ['G1','G2','G3'].includes(r.grade) && TOHOKU_TRACKS.has(r.track);
+  if (has('Hokkaido Hotshot')) preds['Hokkaido Hotshot'] = r => ['G1','G2','G3'].includes(r.grade) && HOKKAIDO_TRACKS.has(r.track);
+  if (has('Kokura Constable')) preds['Kokura Constable'] = r => ['G1','G2','G3'].includes(r.grade) && KOKURA_TRACKS.has(r.track);
+  if (has('Legendary')) preds['Legendary'] = r =>
+    (r.year === 'Classic' && ['Satsuki Sho','Japanese Derby (Tokyo Yushun)','Kikuka Sho','Oka Sho','Japanese Oaks','Shuka Sho'].includes(r.name)) ||
+    (r.year === 'Senior' && ['Osaka Hai','Tenno Sho (Spring)','Takarazuka Kinen','Tenno Sho (Autumn)','Japan Cup','Arima Kinen'].includes(r.name));
+
+  return preds;
+}
+
+// Build map: windowIndex → [epithet names this race contributes to] (for ALL contributing races)
+function buildFullEpithetMap(scheduleRows, selectedRaces, completedEpithetNames) {
+  const preds = epithetRacePredicates(completedEpithetNames);
+  const map = {};
+  for (const row of scheduleRows) {
+    if (row.selected === NO_RACE) continue;
+    const race = selectedRaces.find(r => r.name === row.selected && r.year === row.year);
+    if (!race) continue;
+    const matching = [];
+    for (const [epName, pred] of Object.entries(preds)) {
+      if (pred(race)) matching.push(epName);
+    }
+    if (matching.length) map[row.index] = matching;
+  }
+  return map;
 }
 
 function removeSelectedRaceOnce(selectedRaces, targetIndex) {
@@ -640,6 +852,16 @@ async function optimizeSchedule(settingsInput = null, fixedChoices = {}) {
     });
   }
 
+  // Augment epithet_names with full contribution map (not just marginal)
+  const fullMap = buildFullEpithetMap(scheduleRows, selectedRaces, solvedEpithets);
+  for (const row of scheduleRows) {
+    const full = fullMap[row.index] || [];
+    if (full.length) {
+      const merged = new Set([...(row.epithet_names || []), ...full]);
+      row.epithet_names = [...merged];
+    }
+  }
+
   for (const [windowIndexRaw, choiceName] of Object.entries(fixed)) {
     const windowIndex = Number(windowIndexRaw);
     if (scheduleRows[windowIndex] && scheduleRows[windowIndex].selected !== choiceName) {
@@ -694,7 +916,13 @@ export async function solveWithManualLocks(settingsInput, currentSelected = [], 
   );
   let fixed = {};
   if (freezeBeforeIndex == null && Object.keys(locks).length && currentSelected.length) {
-    freezeBeforeIndex = Math.max(...Object.keys(locks).map(Number));
+    // Only use race locks (not "No race" blocks) to determine freeze point
+    const raceLockIndices = Object.entries(locks)
+      .filter(([, v]) => v !== NO_RACE)
+      .map(([k]) => Number(k));
+    if (raceLockIndices.length) {
+      freezeBeforeIndex = Math.max(...raceLockIndices);
+    }
   }
   if (freezeBeforeIndex != null && currentSelected.length) {
     const cutoff = Math.max(0, Number(freezeBeforeIndex));
@@ -707,10 +935,26 @@ export async function solveWithManualLocks(settingsInput, currentSelected = [], 
   return formatPayload(result, manualLocks, result.selected_choices || []);
 }
 
-function allDropdownChoices(windows) {
+function allDropdownChoices(windows, settings) {
   const choiceMap = {};
+  const rb = settings ? Math.max(0, settings.race_bonus_pct || 0) / 100 : 0;
   for (const w of windows) {
-    choiceMap[w.index] = [AUTO, NO_RACE, ...w.races.map(r => r.name)];
+    const eligible = settings
+      ? w.races.filter(r => raceIsEligible(r, settings))
+      : w.races;
+    const raceChoices = eligible.map(r => {
+      const base = BASE_REWARD[r.grade] || { stats: 0, sp: 0 };
+      return {
+        name: r.name,
+        grade: r.grade,
+        distance: r.distance,
+        surface: r.surface,
+        track: r.track,
+        stats: Math.floor(base.stats * (1 + rb)),
+        sp: Math.floor(base.sp * (1 + rb))
+      };
+    });
+    choiceMap[w.index] = raceChoices;
   }
   return choiceMap;
 }
@@ -731,11 +975,12 @@ function formatPayload(result, manualLocks = {}, currentSelected = []) {
     };
   });
 
-  const choicesByWindow = allDropdownChoices(data.windows);
+  const choicesByWindow = allDropdownChoices(data.windows, result.settings);
   const windowsPayload = (result.schedule_rows || []).map(row => ({
     ...row,
     lock_value: locks[String(row.index)] || AUTO,
-    choices: choicesByWindow[row.index]
+    choices: [AUTO, NO_RACE, ...(choicesByWindow[row.index] || []).map(r => r.name)],
+    race_choices: choicesByWindow[row.index] || []
   }));
 
   return {
@@ -775,4 +1020,4 @@ export async function initialPayload() {
   return formatPayload(result, {}, result.selected_choices || []);
 }
 
-export { NO_RACE, AUTO, applyPreset };
+export { NO_RACE, AUTO, applyPreset, DEFAULT_SUMMER_BLOCKS, BASE_REWARD, epithetRacePredicates };
