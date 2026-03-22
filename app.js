@@ -37,6 +37,7 @@ const ids = {
   hintWeight: document.getElementById('hintWeight'),
   epithetMultiplier: document.getElementById('epithetMultiplier'),
   threeRacePenalty: document.getElementById('threeRacePenalty'),
+  raceCost: document.getElementById('raceCost'),
   rebuildBtn: document.getElementById('rebuildBtn'),
   clearLocksBtn: document.getElementById('clearLocksBtn'),
   metricEpithets: document.getElementById('metricEpithets'),
@@ -505,7 +506,8 @@ function settingsFromUI() {
     sp_weight: Number(ids.spWeight.value || 0),
     hint_weight: Number(ids.hintWeight.value || 0),
     epithet_multiplier: Number(ids.epithetMultiplier.value || 0),
-    three_race_penalty_weight: Number(ids.threeRacePenalty.value || 0)
+    three_race_penalty_weight: Number(ids.threeRacePenalty.value || 0),
+    race_cost: Number(ids.raceCost.value || 0)
   };
 }
 
@@ -527,6 +529,7 @@ function loadSettingsToUI(settings) {
   ids.hintWeight.value = settings.hint_weight;
   ids.epithetMultiplier.value = settings.epithet_multiplier;
   ids.threeRacePenalty.value = settings.three_race_penalty_weight;
+  ids.raceCost.value = settings.race_cost;
 }
 
 function currentFreezeLabel() {
@@ -969,7 +972,7 @@ function bindAutoSolveListeners() {
 
   ids.maxConsec.addEventListener('change', () => queueSolve(0));
 
-  [ids.raceBonus, ids.statWeight, ids.spWeight, ids.hintWeight, ids.epithetMultiplier, ids.threeRacePenalty].forEach(el => {
+  [ids.raceBonus, ids.statWeight, ids.spWeight, ids.hintWeight, ids.epithetMultiplier, ids.threeRacePenalty, ids.raceCost].forEach(el => {
     el.addEventListener('input', () => queueSolve(250));
     el.addEventListener('change', () => queueSolve(0));
   });

@@ -9,7 +9,7 @@ const RANK_VALUE = Object.fromEntries(RANKS.map((r, i) => [r, i]));
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const HALVES = ['Early', 'Late'];
 const YEARS = ['Junior', 'Classic', 'Senior'];
-const COUNTRY_WORDS = ['Saudi Arabia', 'Argentina', 'American', 'New Zealand'];
+const COUNTRY_WORDS = ['Saudi Arabia', 'Argentina', 'American', 'New Zealand', 'Japan'];
 const KANTO_TRACKS = new Set(['Tokyo', 'Nakayama', 'Ooi', 'Oi']);
 const WEST_TRACKS = new Set(['Chukyo', 'Chukyu', 'Hanshin', 'Kyoto']);
 const TOHOKU_TRACKS = new Set(['Fukushima', 'Niigata']);
@@ -210,8 +210,9 @@ function defaultSettings() {
     sp_weight: 1.0,
     hint_weight: 8.0,
     epithet_multiplier: 1.0,
-    three_race_penalty_weight: 0.0,
-    max_consecutive_races: 3
+    three_race_penalty_weight: 10.0,
+    max_consecutive_races: 3,
+    race_cost: 100
   };
 }
 
@@ -227,7 +228,7 @@ function normalizeSettings(settings = null) {
       s.aptitudes = { ...s.aptitudes, ...settings.aptitudes };
     }
   }
-  for (const key of ['race_bonus_pct', 'stat_weight', 'sp_weight', 'hint_weight', 'epithet_multiplier', 'three_race_penalty_weight']) {
+  for (const key of ['race_bonus_pct', 'stat_weight', 'sp_weight', 'hint_weight', 'epithet_multiplier', 'three_race_penalty_weight', 'race_cost']) {
     s[key] = Number(s[key] ?? 0);
   }
   s.max_consecutive_races = Number(s.max_consecutive_races ?? 0);
@@ -250,9 +251,16 @@ function raceReward(race, raceBonusPct) {
   };
 }
 
+function g2g3Baseline(settings) {
+  const base = BASE_REWARD['G2'];
+  const rb = Math.max(0, settings.race_bonus_pct) / 100.0;
+  return settings.stat_weight * Math.floor(base.stats * (1 + rb)) + settings.sp_weight * Math.floor(base.sp * (1 + rb));
+}
+
 function weightedRaceValue(race, settings) {
   const { stats, sp } = raceReward(race, settings.race_bonus_pct);
-  return { stats, sp, value: settings.stat_weight * stats + settings.sp_weight * sp };
+  const cost = Number(settings.race_cost || 0) / 100.0 * g2g3Baseline(settings);
+  return { stats, sp, value: settings.stat_weight * stats + settings.sp_weight * sp - cost };
 }
 
 function epithetStatTotal(epithetName, data) {
@@ -572,8 +580,13 @@ async function optimizeSchedule(settingsInput = null, fixedChoices = {}) {
   for (const e of epithets) {
     objectiveVars.push({ name: `y_${e.name}`, coef: epithetObjectiveValue(e.name, settings, data) });
   }
-  for (const name of zVars) {
-    objectiveVars.push({ name, coef: -settings.three_race_penalty_weight });
+  // Late Dec windows (last half of each year) don't cause conditioning penalty,
+  // so skip the 3-race penalty when the 3rd consecutive race lands there.
+  const LATE_DEC_WINDOWS = new Set([23, 47, 71]);
+  for (let idx = 0; idx < zVars.length; idx += 1) {
+    const thirdWindow = idx + 2;
+    const coef = LATE_DEC_WINDOWS.has(thirdWindow) ? 0 : -settings.three_race_penalty_weight;
+    objectiveVars.push({ name: zVars[idx], coef });
   }
 
   const model = {
@@ -633,7 +646,7 @@ async function optimizeSchedule(settingsInput = null, fixedChoices = {}) {
   }
 
   // Max consecutive races hard cap.
-  // Skip windows where the user has manually locked a race — forced choices override the cap.
+  // Locked races count toward the cap — only constrain the remaining non-locked slots.
   const maxConsec = Number(settings.max_consecutive_races || 0);
   if (maxConsec > 0) {
     const fixedRaceIndices = new Set(
@@ -642,17 +655,21 @@ async function optimizeSchedule(settingsInput = null, fixedChoices = {}) {
         .map(([k]) => Number(k))
     );
     for (let start = 0; start < actionsByWindow.length - maxConsec; start += 1) {
-      // If any window in this sliding range has a forced race, skip the constraint
-      let hasForced = false;
-      for (let i = start; i < start + maxConsec + 1; i += 1) {
-        if (fixedRaceIndices.has(i)) { hasForced = true; break; }
-      }
-      if (hasForced) continue;
+      // Count how many locked races fall in this sliding window
+      let numForced = 0;
       const coeffs = [];
       for (let i = start; i < start + maxConsec + 1; i += 1) {
-        for (const name of raceVarsByWindow[i]) coeffs.push([name, 1]);
+        if (fixedRaceIndices.has(i)) {
+          numForced += 1;
+        } else {
+          for (const name of raceVarsByWindow[i]) coeffs.push([name, 1]);
+        }
       }
-      addConstraint(model, glpk, `max_consec_${start}`, coeffs, glpk.GLP_UP, 0, maxConsec);
+      // If locks alone already hit or exceed the cap, allow 0 more races in free slots
+      const remaining = Math.max(0, maxConsec - numForced);
+      if (coeffs.length > 0) {
+        addConstraint(model, glpk, `max_consec_${start}`, coeffs, glpk.GLP_UP, 0, remaining);
+      }
     }
   }
 
@@ -892,7 +909,10 @@ async function optimizeSchedule(settingsInput = null, fixedChoices = {}) {
   const epithetHintNames = solvedEpithets.filter(name => data.epithetByName[name].reward_kind === 'hint').map(name => hintSkillName(name, data));
   const weightedRaceValueTotal = settings.stat_weight * totalRaceStats + settings.sp_weight * totalRaceSp;
   const weightedEpithetValueTotal = settings.epithet_multiplier * settings.stat_weight * epithetStatPoints + settings.epithet_multiplier * settings.hint_weight * epithetHintNames.length;
-  const triplePenaltyCount = zVars.reduce((sum, zName) => sum + ((solutionVars[zName] || 0) > 0.5 ? 1 : 0), 0);
+  const triplePenaltyCount = zVars.reduce((sum, zName, idx) => {
+    if (LATE_DEC_WINDOWS.has(idx + 2)) return sum;
+    return sum + ((solutionVars[zName] || 0) > 0.5 ? 1 : 0);
+  }, 0);
   const triplePenaltyTotal = settings.three_race_penalty_weight * triplePenaltyCount;
   const totalValue = weightedRaceValueTotal + weightedEpithetValueTotal - triplePenaltyTotal;
 
