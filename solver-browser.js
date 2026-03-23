@@ -505,12 +505,68 @@ function epithetsWeightedValue(epithets, settings, data) {
   return Number(epithets.reduce((sum, name) => sum + epithetObjectiveValue(name, settings, data), 0).toFixed(2));
 }
 
+function buildForcedEpithetRaceTest(forcedEpithets) {
+  if (!forcedEpithets || !forcedEpithets.length) return () => false;
+  const checks = [];
+  const has = name => forcedEpithets.includes(name);
+
+  if (has('Stunning')) checks.push(r => r.year === 'Classic' && ['Satsuki Sho', 'Japanese Derby (Tokyo Yushun)', 'Kikuka Sho'].includes(r.name));
+  if (has('Lady')) checks.push(r => r.year === 'Classic' && ['Oka Sho', 'Japanese Oaks', 'Shuka Sho'].includes(r.name));
+  if (has('Spring Champion')) checks.push(r => r.year === 'Senior' && ['Osaka Hai', 'Tenno Sho (Spring)', 'Takarazuka Kinen'].includes(r.name));
+  if (has('Fall Champion')) checks.push(r => r.year === 'Senior' && ['Tenno Sho (Autumn)', 'Japan Cup', 'Arima Kinen'].includes(r.name));
+  if (has('Shield Bearer')) checks.push(r => r.year === 'Senior' && ['Tenno Sho (Spring)', 'Tenno Sho (Autumn)'].includes(r.name));
+  if (has('Incredible')) checks.push(r => r.year === 'Classic' && ['Satsuki Sho', 'Japanese Derby (Tokyo Yushun)', 'Kikuka Sho', 'Japan Cup', 'Arima Kinen'].includes(r.name));
+  if (has('Phenomenal')) checks.push(r =>
+    (r.year === 'Classic' && ['Satsuki Sho', 'Japanese Derby (Tokyo Yushun)', 'Kikuka Sho'].includes(r.name)) ||
+    ['Tenno Sho (Spring)', 'Takarazuka Kinen', 'Japan Cup', 'Tenno Sho (Autumn)', 'Osaka Hai', 'Arima Kinen'].includes(r.name));
+  if (has('Breakneck Miler')) checks.push(r => ['NHK Mile Cup', 'Yasuda Kinen', 'Mile Championship'].includes(r.name));
+  if (has('Heroine')) checks.push(r => r.year === 'Classic' && ['Oka Sho', 'Japanese Oaks', 'Shuka Sho', 'Queen Elizabeth II Cup'].includes(r.name));
+  if (has('Goddess')) checks.push(r =>
+    (r.year === 'Classic' && ['Oka Sho', 'Japanese Oaks', 'Shuka Sho', 'Queen Elizabeth II Cup'].includes(r.name)) ||
+    (r.year === 'Junior' && r.name === 'Hanshin Juvenile Fillies') ||
+    (r.year === 'Senior' && ['Victoria Mile', 'Queen Elizabeth II Cup'].includes(r.name)));
+  if (has('Sprint Go-Getter')) checks.push(r => ['Takamatsunomiya Kinen', 'Sprinters Stakes'].includes(r.name));
+  if (has('Sprint Speedster')) checks.push(r => ['Takamatsunomiya Kinen', 'Sprinters Stakes', 'Yasuda Kinen', 'Mile Championship'].includes(r.name));
+  if (has('Mile a Minute')) checks.push(r =>
+    (r.year === 'Classic' && r.name === 'Oka Sho') ||
+    ['NHK Mile Cup', 'Yasuda Kinen', 'Mile Championship'].includes(r.name) ||
+    (r.year === 'Senior' && r.name === 'Victoria Mile') ||
+    (r.year === 'Junior' && ['Hanshin Juvenile Fillies', 'Asahi Hai Futurity Stakes'].includes(r.name)));
+  if (has('Legendary')) checks.push(r =>
+    (r.year === 'Classic' && ['Satsuki Sho', 'Japanese Derby (Tokyo Yushun)', 'Kikuka Sho', 'Oka Sho', 'Japanese Oaks', 'Shuka Sho'].includes(r.name)) ||
+    (r.year === 'Senior' && ['Osaka Hai', 'Tenno Sho (Spring)', 'Takarazuka Kinen', 'Tenno Sho (Autumn)', 'Japan Cup', 'Arima Kinen'].includes(r.name)));
+  if (has('Kicking Up Dust')) checks.push(r => r.year === 'Classic' && ['Unicorn Stakes', 'Leopard Stakes', 'Japan Dirt Derby'].includes(r.name));
+  if (has('Dirt Sprinter')) checks.push(r => r.name === 'JBC Sprint');
+
+  // Count-based epithets: include all matching races
+  if (has('Dirt G1 Achiever') || has('Dirt G1 Star') || has('Dirt G1 Powerhouse') || has('Dirt G1 Dominator'))
+    checks.push(r => r.surface === 'Dirt' && r.grade === 'G1');
+  if (has('Dirty Work') || has('Playing Dirty') || has('Eat My Dust'))
+    checks.push(r => r.surface === 'Dirt');
+  if (has('Standard Distance Leader')) checks.push(r => r.distance === 'Medium');
+  if (has('Non-Standard Distance Leader')) checks.push(r => r.distance !== 'Medium');
+  if (has('Pro Racer')) checks.push(r => ['G1', 'G2', 'G3', 'OP', 'Pre-OP'].includes(r.grade));
+  if (has('Junior Jewel')) checks.push(r => String(r.name).includes('Junior Stakes'));
+  if (has('Globe-Trotter')) checks.push(r => COUNTRY_WORDS.some(w => String(r.name).includes(w)));
+  if (has('Umatastic')) checks.push(r => String(r.name).includes('Umamusume Stakes'));
+  if (has('Dirt Dancer')) checks.push(r => r.surface === 'Dirt' && ['Sprint', 'Mile', 'Medium'].includes(r.distance));
+  if (has('Turf Tussler')) checks.push(r => r.surface === 'Turf' && ['Sprint', 'Mile', 'Medium', 'Long'].includes(r.distance));
+  if (has('Kanto Conqueror')) checks.push(r => ['G1', 'G2', 'G3'].includes(r.grade) && KANTO_TRACKS.has(r.track));
+  if (has('West Japan Whiz')) checks.push(r => ['G1', 'G2', 'G3'].includes(r.grade) && WEST_TRACKS.has(r.track));
+  if (has('Tohoku Top Dog')) checks.push(r => ['G1', 'G2', 'G3'].includes(r.grade) && TOHOKU_TRACKS.has(r.track));
+  if (has('Hokkaido Hotshot')) checks.push(r => ['G1', 'G2', 'G3'].includes(r.grade) && HOKKAIDO_TRACKS.has(r.track));
+  if (has('Kokura Constable')) checks.push(r => ['G1', 'G2', 'G3'].includes(r.grade) && KOKURA_TRACKS.has(r.track));
+
+  return race => checks.some(fn => fn(race));
+}
+
 function buildActions(settings, windows, forcedChoiceNames = {}) {
+  const forcedTest = buildForcedEpithetRaceTest(settings.forced_epithets);
   return windows.map(window => {
     const forcedName = forcedChoiceNames[window.index];
     const actions = [{ kind: 'none', choice: NO_RACE, race: null, stats: 0, sp: 0, value: 0 }];
     for (const race of window.races) {
-      if (!raceIsEligible(race, settings) && forcedName !== race.name) continue;
+      if (!raceIsEligible(race, settings) && forcedName !== race.name && !forcedTest(race)) continue;
       const { stats, sp, value } = weightedRaceValue(race, settings);
       actions.push({ kind: 'race', choice: race.name, race, stats, sp, value });
     }
@@ -556,6 +612,20 @@ async function optimizeSchedule(settingsInput = null, fixedChoices = {}) {
   const { windows, epithets, glpk } = data;
   const settings = normalizeSettings(settingsInput);
   const fixed = Object.fromEntries(Object.entries(fixedChoices || {}).map(([k, v]) => [Number(k), v]));
+
+  // When forced epithets are active, convert summer "[No race]" locks into soft penalties
+  // so the solver can use those slots if needed (summer training is very valuable).
+  const summerSet = new Set(DEFAULT_SUMMER_BLOCKS);
+  const softenedSummerWindows = new Set();
+  if (settings.forced_epithets && settings.forced_epithets.length) {
+    for (const idx of summerSet) {
+      if (fixed[idx] === NO_RACE) {
+        delete fixed[idx];
+        softenedSummerWindows.add(idx);
+      }
+    }
+  }
+
   const actionsByWindow = buildActions(settings, windows, fixed);
 
   const xVars = [];
@@ -574,9 +644,22 @@ async function optimizeSchedule(settingsInput = null, fixedChoices = {}) {
     zVars.push(`z_${start}`);
   }
 
+  // Summer training penalty: racing during summer camp costs heavily because
+  // summer is the primary training window in a career. Scale off the G2/G3
+  // baseline so the penalty stays proportional to other scoring weights.
+  const summerPenalty = softenedSummerWindows.size > 0
+    ? g2g3Baseline(settings) * 3
+    : 0;
+
   const objectiveVars = [];
   for (const name of xVars) {
-    objectiveVars.push({ name, coef: actionLookup.get(name).value });
+    const info = actionLookup.get(name);
+    let coef = info.value;
+    // Apply summer penalty to race actions in softened summer windows
+    if (summerPenalty > 0 && softenedSummerWindows.has(info.window) && info.race) {
+      coef -= summerPenalty;
+    }
+    objectiveVars.push({ name, coef });
   }
   for (const e of epithets) {
     objectiveVars.push({ name: `y_${e.name}`, coef: epithetObjectiveValue(e.name, settings, data) });
