@@ -237,6 +237,26 @@ function showTooltip(card, w) {
             <div class="tt-val-num">${w.tile_value || 0}</div>
           </div>
         </div>
+        ${(() => {
+          const raceStats = w.race_stats || 0;
+          const epithetStats = newEpithets.reduce((sum, name) => {
+            const ep = state.epithets.find(e => e.name === name);
+            return sum + (ep && ep.reward_kind === 'stat' ? (ep.amount || 0) : 0);
+          }, 0);
+          const shopCoins = 100;
+          const shopStats = Math.floor(shopCoins / 30) * 15;
+          const shopRemainder = shopCoins - Math.floor(shopCoins / 30) * 30;
+          const shopExtra = Math.floor(shopRemainder / 15) * 7;
+          const totalStats = raceStats + epithetStats + shopStats + shopExtra;
+          return `
+          <div class="tt-section-label">Stat Breakdown</div>
+          <div class="tt-breakdown">
+            <div class="tt-bk-row"><span class="tt-bk-label">Race</span><span class="tt-bk-val">+${raceStats}</span></div>
+            <div class="tt-bk-row"><span class="tt-bk-label">Epithets</span><span class="tt-bk-val">${epithetStats ? '+' + epithetStats : '—'}</span></div>
+            <div class="tt-bk-row"><span class="tt-bk-label">Shop <span class="tt-bk-hint">${shopCoins} coins</span></span><span class="tt-bk-val">+${shopStats + shopExtra}</span></div>
+            <div class="tt-bk-row tt-bk-total"><span class="tt-bk-label">Total</span><span class="tt-bk-val">+${totalStats}</span></div>
+          </div>`;
+        })()}
         ${linkedOnly.length ? `
           <div class="tt-section-label">Contributes to Epithets</div>
           <div class="tt-epithet-list">
@@ -338,6 +358,19 @@ function showTooltip(card, w) {
     btnRow.appendChild(skipBtn);
 
     if (!isNoRace) {
+      const lostBtn = document.createElement('button');
+      lostBtn.className = 'tt-btn tt-btn-lost';
+      lostBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v10"/><path d="M9 5l3-3 3 3"/><circle cx="12" cy="19" r="3"/></svg> Lost — Retry`;
+      lostBtn.title = 'Didn\'t get 1st? Lock this turn as training so the solver replans the race for a later turn.';
+      lostBtn.addEventListener('click', () => {
+        lockUpTo(w.index);
+        state.manual_locks[String(w.index)] = '[No race]';
+        state.freeze_before_index = w.index;
+        hideTooltip();
+        queueSolve(0);
+      });
+      btnRow.appendChild(lostBtn);
+
       const confirmBtn = document.createElement('button');
       confirmBtn.className = 'tt-btn tt-btn-confirm';
       confirmBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Confirm Race`;
