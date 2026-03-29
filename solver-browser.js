@@ -9,7 +9,7 @@ const RANK_VALUE = Object.fromEntries(RANKS.map((r, i) => [r, i]));
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const HALVES = ['Early', 'Late'];
 const YEARS = ['Junior', 'Classic', 'Senior'];
-const COUNTRY_WORDS = ['Saudi Arabia', 'Argentina', 'American', 'New Zealand', 'Japan'];
+const COUNTRY_WORDS = ['Saudi Arabia', 'Argentina', 'American', 'New Zealand', 'Japan '];
 const KANTO_TRACKS = new Set(['Tokyo', 'Nakayama', 'Ooi', 'Oi']);
 const WEST_TRACKS = new Set(['Chukyo', 'Chukyu', 'Hanshin', 'Kyoto']);
 const TOHOKU_TRACKS = new Set(['Fukushima', 'Niigata']);
@@ -408,7 +408,7 @@ function completedEpithets(selectedRaces, data) {
   if (counts.west >= 3) done.add('West Japan Whiz');
   if (counts.tohoku >= 3) done.add('Tohoku Top Dog');
   if (counts.hokkaido >= 3) done.add('Hokkaido Hotshot');
-  if (counts.kokura >= 3) done.add('Kokura Constable');
+  if (counts.kokura >= 2) done.add('Kokura Constable');
   if (springChampion && fallChampion && (stunning || lady)) done.add('Legendary');
 
   return data.epithets.filter(e => done.has(e.name)).map(e => e.name);
@@ -827,7 +827,7 @@ async function optimizeSchedule(settingsInput = null, fixedChoices = {}) {
   requireCountThreshold('West Japan Whiz', exprWest, 3);
   requireCountThreshold('Tohoku Top Dog', exprTohoku, 3);
   requireCountThreshold('Hokkaido Hotshot', exprHokkaido, 3);
-  requireCountThreshold('Kokura Constable', exprKokura, 3);
+  requireCountThreshold('Kokura Constable', exprKokura, 2);
   requireYLeqExpr('Dirt Dancer', actionSum(r => r.surface === 'Dirt' && r.distance === 'Sprint'));
   requireYLeqExpr('Dirt Dancer', actionSum(r => r.surface === 'Dirt' && r.distance === 'Mile'));
   requireYLeqExpr('Dirt Dancer', actionSum(r => r.surface === 'Dirt' && r.distance === 'Medium'));
