@@ -157,6 +157,32 @@ function closeShareModal() {
   shareBackdrop.classList.remove('open');
 }
 
+/* ───── EXPORT ───── */
+const YEAR_LABEL = { Junior: 'First Year', Classic: 'Second Year', Senior: 'Third Year' };
+const MONTHS_LIST = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+function exportSchedule() {
+  const races = state.windows
+    .filter(w => w.selected && w.selected !== '[No race]')
+    .map(w => ({
+      raceName: w.selected,
+      grade: w.grade || '',
+      year: YEAR_LABEL[w.year] || w.year,
+      turn: `${String(MONTHS_LIST.indexOf(w.month) + 1).padStart(2, '0')}_${w.half === 'Early' ? '01' : '02'}`
+    }));
+
+  const blob = new Blob([JSON.stringify(races, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'export_uma_guide.json';
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('Schedule exported!');
+}
+
+document.getElementById('exportBtn').addEventListener('click', exportSchedule);
+
 shareBtn.addEventListener('click', openShareModal);
 shareClose.addEventListener('click', closeShareModal);
 shareBackdrop.addEventListener('click', closeShareModal);

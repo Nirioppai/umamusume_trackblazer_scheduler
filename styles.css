@@ -270,7 +270,19 @@ button, select, input { font: inherit; color: var(--text); }
 }
 .top-metric.accent .tm-value { color: var(--green-text); }
 
-.top-metric.status-area { background: none; border: none; padding: 0; }
+.top-metric.status-area { background: none; border: none; padding: 0; display: flex; align-items: center; gap: 8px; }
+
+.export-btn {
+  height: 28px; padding: 0 10px;
+  border-radius: var(--radius); border: 2px solid var(--stroke);
+  background: var(--panel); color: var(--text);
+  font-size: 11px; font-weight: 600; cursor: pointer;
+  display: inline-flex; align-items: center;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+.export-btn:hover { background: var(--panel-2); }
+.export-btn:active { transform: scale(0.95); }
 
 .status-detail-row {
   display: flex; justify-content: space-between; align-items: center;
